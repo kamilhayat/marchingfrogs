@@ -1,0 +1,39 @@
+export interface NavLink {
+  title: string;
+  href: string;
+  items?: {
+    title: string;
+    href: string;
+    description?: string;
+  }[];
+}
+
+export interface Vertical {
+  title: string;
+  description: string;
+  icon: any; // Type as any for Lucide icons or import them if possible, but any is common for data files
+  color: string;
+  link: string;
+}
+
+export interface AboutContent {
+  badge: string;
+  title: {
+    main: string;
+    highlight: string;
+  };
+  descriptions: string[];
+  features: string[];
+  integratedApproach: {
+    title: string;
+    description: string;
+    cta: string;
+  };
+}
+
+export interface Service {
+  title: string;
+  description: string;
+  icon: any;
+  features?: string[];
+}

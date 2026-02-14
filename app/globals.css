@@ -178,10 +178,20 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
-    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .section-subtitle {
+    @apply inline-flex items-center gap-2 px-5 py-2 rounded-full bg-secondary/30 border border-secondary/50 text-secondary-foreground text-xs font-bold tracking-[0.2em] uppercase mb-4 shadow-sm transition-all hover:bg-secondary/40;
+  }
+  .section-title {
+    @apply text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight;
+  }
+  .section-desc {
+    @apply text-lg text-muted-foreground leading-relaxed;
   }
 }
