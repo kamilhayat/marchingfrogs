@@ -1,6 +1,6 @@
 'use client';
 
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
@@ -128,47 +128,63 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          'lg:hidden fixed inset-0 top-[73px] bg-background z-40 transition-transform duration-300 ease-in-out p-6',
+          'lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-all duration-300',
+          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible',
+        )}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Mobile Menu Drawer */}
+      <div
+        className={cn(
+          'lg:hidden fixed top-0 right-0 bottom-0 w-[70vw] max-w-sm bg-background/95 backdrop-blur-2xl z-50 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[-20px_0_50px_rgba(0,0,0,0.1)] p-8 pt-24',
           isOpen ? 'translate-x-0' : 'translate-x-full',
         )}
       >
-        <div className='flex flex-col gap-6'>
-          {NAV_LINKS.map((link) => (
-            <div key={link.title} className='flex flex-col gap-4'>
-              <Link
-                href={link.href}
-                className={cn(
-                  'text-xl font-semibold',
-                  pathname === link.href ? 'text-primary' : 'text-foreground',
+        <button
+          onClick={() => setIsOpen(false)}
+          className='absolute top-6 right-6 p-2 rounded-2xl bg-secondary/50 text-foreground hover:bg-primary hover:text-white transition-all'
+        >
+          <X className='w-6 h-6' />
+        </button>
+
+        <div className='flex flex-col gap-8'>
+          <div className='space-y-6'>
+            {NAV_LINKS.map((link) => (
+              <div key={link.title} className='flex flex-col gap-4'>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    'text-xl font-bold tracking-tight',
+                    pathname === link.href ? 'text-primary' : 'text-foreground',
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.title}
+                </Link>
+                {link.items && (
+                  <div className='flex flex-col gap-3 pl-4 border-l border-primary/20'>
+                    {link.items.map((item) => (
+                      <Link
+                        key={item.title}
+                        href={item.href}
+                        className='text-sm text-muted-foreground hover:text-primary transition-colors'
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
                 )}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.title}
-              </Link>
-              {link.items && (
-                <div className='flex flex-col gap-3 pl-4 border-l-2 border-primary/20'>
-                  {link.items.map((item) => (
-                    <Link
-                      key={item.title}
-                      href={item.href}
-                      className='text-muted-foreground hover:text-primary transition-colors'
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-          <div className='flex flex-col gap-4 mt-8'>
-            <Button variant='outline' className='w-full rounded-xl py-6'>
-              Log In
-            </Button>
-            <Button className='w-full rounded-xl py-6 shadow-lg shadow-primary/20'>
+              </div>
+            ))}
+          </div>
+
+          <div className='pt-8 border-t border-border mt-auto'>
+            <Button className='w-full rounded-2xl py-7 text-lg shadow-xl shadow-primary/20'>
               Get Started
             </Button>
           </div>
