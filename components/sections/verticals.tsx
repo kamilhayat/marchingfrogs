@@ -11,7 +11,7 @@ const Verticals = () => {
     >
       <GridPattern />
 
-      <div className='container mx-auto px-6 md:px-0 relative z-10'>
+      <div className='container mx-auto px-4 md:px-0 relative z-10'>
         {/* Header Section */}
         <div className='max-w-4xl mb-12'>
           <div className='section-subtitle'>Our Business Engines</div>
@@ -35,7 +35,7 @@ const Verticals = () => {
               className='group relative p-8 rounded-[3.5rem] bg-card border border-border hover:border-primary/40 transition-all duration-700 hover:shadow-2xl overflow-hidden'
             >
               {/* Background Decor */}
-              <div className='absolute -top-20 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px] bg-primary/10 transition-all duration-700' />
+              <div className='absolute -top-20 -right-20 w-80 h-80 rounded-full blur-[100px] bg-primary/10 transition-all duration-700' />
 
               <div className='relative z-10 space-y-6'>
                 <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6'>

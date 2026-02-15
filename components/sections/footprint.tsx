@@ -2,24 +2,23 @@
 import { CONTACT_DATA } from '@/constants';
 import { MapPin, ExternalLink } from 'lucide-react';
 import { GridPattern } from '@/components/sections/svg';
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  Marker,
-} from 'react-simple-maps';
-
-const geoUrl = 'https://unpkg.com/world-atlas@2.0.2/countries-110m.json';
+import InteractiveMap from './interactive-map';
+import React from 'react';
 
 const Footprint = () => {
+  const locations = CONTACT_DATA.locations.map((loc) => ({
+    city: loc.city,
+    position: { lat: loc.coordinates[1], lng: loc.coordinates[0] },
+  }));
+
   return (
     <section
-      className='py-8 bg-background relative overflow-hidden'
+      className='py-12 bg-background relative overflow-hidden'
       id='footprint'
     >
       <GridPattern />
 
-      <div className='container mx-auto px-6 md:px-0 relative z-10'>
+      <div className='container mx-auto px-4 md:px-0 relative z-10'>
         <div className='flex flex-col lg:flex-row items-center gap-16'>
           {/* Content Side */}
           <div className='w-full lg:w-1/2 space-y-12 lg:order-1'>
@@ -67,92 +66,23 @@ const Footprint = () => {
 
           {/* Map Side */}
           <div className='w-full lg:w-1/2 relative lg:order-2'>
-            <div className='relative w-full aspect-square md:aspect-video lg:aspect-square bg-linear-to-br from-primary/5 to-accent/5 rounded-[3rem] border border-border overflow-hidden shadow-2xl'>
-              <div className='absolute inset-0 bg-primary/2 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' />
-
-              <ComposableMap
-                projection='geoMercator'
-                projectionConfig={{
-                  scale: 140,
-                  center: [60, 20],
-                }}
-                className='w-full h-full'
-              >
-                <Geographies geography={geoUrl}>
-                  {({ geographies }: { geographies: any[] }) =>
-                    geographies.map((geo: any) => (
-                      <Geography
-                        key={geo.rsmKey}
-                        geography={geo}
-                        fill='#EAEAEC'
-                        stroke='#D6D6DA'
-                        strokeWidth={0.5}
-                        style={{
-                          default: { outline: 'none' },
-                          hover: {
-                            fill: 'var(--primary)',
-                            opacity: 0.1,
-                            outline: 'none',
-                          },
-                          pressed: { outline: 'none' },
-                        }}
-                      />
-                    ))
-                  }
-                </Geographies>
-
-                {CONTACT_DATA.locations.map((loc) => (
-                  <Marker
-                    key={loc.city}
-                    coordinates={loc.coordinates as [number, number]}
-                  >
-                    <g className='group/pin cursor-pointer'>
-                      {/* Pulse Effect */}
-                      <circle r={8} fill='var(--primary)' opacity={0.3}>
-                        <animate
-                          attributeName='r'
-                          from='4'
-                          to='12'
-                          dur='1.5s'
-                          repeatCount='indefinite'
-                        />
-                        <animate
-                          attributeName='opacity'
-                          from='0.6'
-                          to='0'
-                          dur='1.5s'
-                          repeatCount='indefinite'
-                        />
-                      </circle>
-
-                      <circle
-                        r={4}
-                        fill='var(--primary)'
-                        stroke='#fff'
-                        strokeWidth={1.5}
-                      />
-
-                      {/* Tooltip on Marker */}
-                      <text
-                        textAnchor='middle'
-                        y={-15}
-                        className='text-[10px] font-bold fill-foreground opacity-0 group-hover/pin:opacity-100 transition-opacity duration-300 pointer-events-none'
-                        style={{ fontFamily: 'sans-serif' }}
-                      >
-                        {loc.city}
-                      </text>
-                    </g>
-                  </Marker>
-                ))}
-              </ComposableMap>
+            <div className='relative w-full aspect-square md:aspect-video lg:aspect-square bg-slate-50 rounded-[3rem] border border-border overflow-hidden shadow-2xl'>
+              <InteractiveMap locations={locations} />
 
               {/* Legend / Overlay */}
-              <div className='absolute bottom-8 left-8 p-4 bg-white/80 backdrop-blur-md rounded-2xl border border-border shadow-lg'>
+              <div className='absolute bottom-8 right-8 p-5 bg-white/95 backdrop-blur-md rounded-4xl border border-border shadow-2xl flex flex-col gap-3 z-20'>
                 <div className='flex items-center gap-3'>
-                  <div className='w-3 h-3 rounded-full bg-primary animate-pulse' />
-                  <span className='text-xs font-bold text-foreground'>
-                    Active Strategic Hubs
+                  <div className='w-3 h-3 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]' />
+                  <span className='text-[10px] font-black text-foreground uppercase tracking-widest'>
+                    Active Global Hubs
                   </span>
+                </div>
+              </div>
+
+              {/* Decorative Corner Element */}
+              <div className='absolute top-8 left-8 p-4 border border-border rounded-2xl bg-white/50 backdrop-blur-sm z-20'>
+                <div className='text-[10px] font-black text-muted-foreground/50 uppercase tracking-[0.5em]'>
+                  Live Network
                 </div>
               </div>
             </div>

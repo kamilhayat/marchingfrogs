@@ -12,7 +12,7 @@ const Contact = () => {
       <GradientBlobs />
       <Particles />
 
-      <div className='container mx-auto  relative z-10'>
+      <div className='container mx-auto px-4 md:px-0 relative z-10'>
         <div className='max-w-5xl mx-auto'>
           <div className='text-center mb-8'>
             <h2 className='section-subtitle'>{CONTACT_DATA.subtitle}</h2>

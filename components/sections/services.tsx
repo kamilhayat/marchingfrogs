@@ -10,12 +10,12 @@ const Services = () => {
     >
       <GridPattern />
 
-      <div className='container mx-auto relative z-10'>
+      <div className='container mx-auto px-4 md:px-0 relative z-10'>
         {/* Header - High Impact */}
         <div className='max-w-4xl mb-12'>
           <div className='section-subtitle'>Our Expertise</div>
           <h2 className='section-title font-sans font-bold text-foreground leading-none tracking-tight mb-8'>
-            Specialized Solutions for <br />
+            Specialized Solutions for <br className='hidden md:flex' />
             <span className='text-primary italic font-serif'>
               IP & Legal Professionals
             </span>

@@ -16,7 +16,7 @@ const Values = () => {
       <GridPattern />
       <Particles />
 
-      <div className='container mx-auto  relative z-10'>
+      <div className='container mx-auto px-4 md:px-0  relative z-10'>
         {/* Headline Section - Improved spacing and typography */}
         <div className='max-w-4xl mb-8'>
           <div className='section-subtitle bg-white/5! border-white/10! text-white!'>
@@ -47,11 +47,11 @@ const Values = () => {
 
           <div className='grid lg:grid-cols-2 relative z-10'>
             {/* Mission Column */}
-            <div className='p-12 relative overflow-hidden group/m border-b lg:border-b-0 lg:border-r border-white/10'>
+            <div className='p-6 md:p-10 relative overflow-hidden group/m border-b lg:border-b-0 lg:border-r border-white/10'>
               <div className='absolute -top-20 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px] transition-all duration-700 group-hover/m:bg-primary/20' />
 
               {/* Icon in top right corner */}
-              <div className='absolute top-12 right-12 w-24 h-24 rounded-4xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover/m:scale-110 group-hover/m:rotate-6 transition-all duration-500 shadow-2xl shadow-primary/40 z-20'>
+              <div className='absolute top-12 right-12 w-24 h-24 rounded-4xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover/m:scale-110 group-hover/m:rotate-6 transition-all duration-500 shadow-2xl shadow-primary/40 z-20 rotate-6 md:rotate-0'>
                 <Target className='w-12 h-12' />
               </div>
 
@@ -77,11 +77,11 @@ const Values = () => {
             </div>
 
             {/* Vision Column */}
-            <div className='p-12 md:p-20 relative overflow-hidden group/v bg-white/2'>
+            <div className='p-6 md:p-10 relative overflow-hidden group/v bg-white/2'>
               <div className='absolute -bottom-20 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-[100px] transition-all duration-700 group-hover/v:bg-accent/20' />
 
               {/* Icon in top right corner */}
-              <div className='absolute top-12 right-12 w-24 h-24 rounded-4xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20 group-hover/v:scale-110 group-hover/v:-rotate-6 transition-all duration-500 shadow-2xl shadow-accent/40 z-20'>
+              <div className='absolute top-6 md:top-12 left-6 md:right-12 w-24 h-24 rounded-4xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20 group-hover/v:scale-110 group-hover/v:-rotate-6 transition-all duration-500 shadow-2xl shadow-accent/40 z-20 rotate-6 md:rotate-0'>
                 <Eye className='w-12 h-12' />
               </div>
 

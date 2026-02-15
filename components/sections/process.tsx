@@ -9,7 +9,7 @@ const Process = () => {
     >
       <GridPattern />
 
-      <div className='container mx-auto px-6 md:px-0 relative z-10'>
+      <div className='container mx-auto px-4 md:px-0 relative z-10'>
         {/* Header Section */}
         <div className='max-w-4xl mb-12'>
           <div className='section-subtitle'>Our Journey</div>
