@@ -111,9 +111,6 @@ const Navbar = () => {
 
         {/* Action Button */}
         <div className='hidden lg:flex items-center gap-4'>
-          <Button variant='ghost' className='text-sm font-medium'>
-            Log In
-          </Button>
           <Button
             size='lg'
             className='rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all'
