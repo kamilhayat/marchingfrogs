@@ -17,6 +17,7 @@ import {
   Users,
   MessageSquare,
   Recycle,
+  ArrowUpRight,
 } from 'lucide-react';
 import { Vertical, AboutContent, Service, CompanyValues } from '@/types';
 
@@ -165,6 +166,57 @@ export const SERVICES: Service[] = [
   },
 ];
 
+export const PROCESS_STEPS = [
+  {
+    title: 'Discovery & Analytics',
+    description:
+      'We dive deep into your operational landscape, using data-driven insights to identify growth bottlenecks and opportunities.',
+    icon: Target,
+  },
+  {
+    title: 'Strategic Integration',
+    description:
+      'Developing a bespoke roadmap where our technology and expert manpower integrate seamlessly with your existing workflows.',
+    icon: Zap,
+  },
+  {
+    title: 'Operational Excellence',
+    description:
+      'Executing with precision. Our multidisciplinary teams deploy solutions that optimize efficiency and ensure high-tier quality.',
+    icon: Award,
+  },
+  {
+    title: 'Scalable Growth',
+    description:
+      'Continuous monitoring and iterative improvements to ensure your organization is world-ready and future-proof.',
+    icon: ArrowUpRight,
+  },
+];
+
+export const TESTIMONIALS = [
+  {
+    quote:
+      'Marching Frogs has been a pivotal partner in our global IP strategy. Their precision and speed are unmatched in the industry.',
+    author: 'Elena Rodriguez',
+    role: 'Chief IP Counsel, TechCorp International',
+    avatar: 'ER',
+  },
+  {
+    quote:
+      'The BGLS platform provided us with unprecedented access to legal leaders across the Middle East. Truly a world-class experience.',
+    author: 'David Chen',
+    role: 'Partner, Global Legal Solutions',
+    avatar: 'DC',
+  },
+  {
+    quote:
+      'Their MICE management handled our ASEAN leadership summit with absolute professionalism and innovative flare.',
+    author: 'Sarah Al-Maktoum',
+    role: 'Director of Operations, Future Frontiers',
+    avatar: 'SA',
+  },
+];
+
 export const CONTACT_DATA = {
   title: 'Get in Touch',
   subtitle: 'Contact Us',
@@ -174,8 +226,20 @@ export const CONTACT_DATA = {
   phone: '+91 123 456 7890',
   address: 'Marching Frogs PVT LTD, Silicon Valley of India, Bangalore',
   locations: [
-    { city: 'Bangalore', details: 'Corporate Headquarters, India' },
-    { city: 'Dubai', details: 'Strategic Hub, UAE' },
-    { city: 'Malaysia', details: 'Regional Office, SE Asia' },
+    {
+      city: 'Bangalore',
+      details: 'Corporate Headquarters, India',
+      coordinates: [77.5946, 12.9716],
+    },
+    {
+      city: 'Dubai',
+      details: 'Strategic Hub, UAE',
+      coordinates: [55.2708, 25.2048],
+    },
+    {
+      city: 'Malaysia',
+      details: 'Regional Office, SE Asia',
+      coordinates: [101.6869, 3.139],
+    },
   ],
 };
