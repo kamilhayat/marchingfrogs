@@ -81,7 +81,7 @@ const Values = () => {
               <div className='absolute -bottom-20 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-[100px] transition-all duration-700 group-hover/v:bg-accent/20' />
 
               {/* Icon in top right corner */}
-              <div className='absolute top-6 md:top-12 left-6 md:right-12 w-24 h-24 rounded-4xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20 group-hover/v:scale-110 group-hover/v:-rotate-6 transition-all duration-500 shadow-2xl shadow-accent/40 z-20 rotate-6 md:rotate-0'>
+              <div className='absolute top-6 md:top-12 left-6 md:left-auto md:right-12 w-24 h-24 rounded-4xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20 group-hover/v:scale-110 group-hover/v:-rotate-6 transition-all duration-500 shadow-2xl shadow-accent/40 z-20 rotate-6 md:rotate-0'>
                 <Eye className='w-12 h-12' />
               </div>
 

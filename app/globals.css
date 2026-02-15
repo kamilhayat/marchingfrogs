@@ -178,9 +178,8 @@
 @layer base {
   html,
   body {
-    max-width: 100vw;
-    overflow-x: hidden;
     position: relative;
+    min-height: 100%;
   }
   * {
     @apply border-border outline-ring/50;

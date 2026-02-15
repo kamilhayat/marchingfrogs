@@ -29,11 +29,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${playfair.variable} antialiased font-sans`}
       >
-        <div className='flex flex-col min-h-screen overflow-x-hidden'>
-          <Header />
-          <main className='grow'>{children}</main>
-          <Footer />
-        </div>
+        <Header />
+        <main className='grow w-full'>{children}</main>
+        <Footer />
       </body>
     </html>
   );

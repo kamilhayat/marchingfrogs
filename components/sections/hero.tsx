@@ -5,7 +5,7 @@ import { DottedConstellation, SectionDivider } from '@/components/sections/svg';
 
 const Hero = () => {
   return (
-    <section className='relative flex items-center pt-6 pb-12 overflow-hidden bg-primary/10'>
+    <section className='relative flex items-center pt-24 pb-12 overflow-hidden bg-primary/10'>
       <DottedConstellation />
       <SectionDivider />
 
