@@ -37,3 +37,31 @@ export interface Service {
   icon: any;
   features?: string[];
 }
+
+export interface ContactInfo {
+  address: string;
+  phone: string;
+  email: string;
+  locations: {
+    city: string;
+    details: string;
+  }[];
+}
+
+export interface ValueItem {
+  title: string;
+  description: string;
+  icon: any;
+}
+
+export interface CompanyValues {
+  mission: {
+    title: string;
+    description: string;
+  };
+  vision: {
+    title: string;
+    description: string;
+  };
+  values: ValueItem[];
+}

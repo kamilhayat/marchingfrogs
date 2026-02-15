@@ -1,19 +1,31 @@
-'use client';
-
-import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Globe, Shield, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { DottedConstellation, SectionDivider } from '@/components/sections/svg';
 
 const Hero = () => {
   return (
-    <section className='relative min-h-[90vh] flex items-center pt-28 lg:pt-24 overflow-hidden'>
-      {/* Background Decor */}
-      <div className='absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10' />
-      <div className='absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl -z-10' />
+    <section className='relative flex items-center pt-6 pb-12 overflow-hidden bg-primary/10'>
+      <DottedConstellation />
+      <SectionDivider />
 
       <div className='container mx-auto'>
-        <div className='max-w-4xl mx-auto text-center space-y-2'>
+        <div className='max-w-4xl mx-auto text-center space-y-6 relative'>
+          {/* Experience Stamp */}
+          <div className='absolute top-0 -right-12 hidden lg:flex flex-col items-center justify-center w-32 h-32 rounded-full border-2 border-primary/20 bg-background/50 backdrop-blur-md shadow-xl animate-in fade-in zoom-in duration-1000 delay-500 hover:rotate-12 transition-all group'>
+            <div className='absolute inset-0 rounded-full border border-primary/10 animate-ping' />
+            <div className='text-[10px] font-bold tracking-[0.3em] text-primary uppercase mb-1'>
+              EST.
+            </div>
+            <div className='text-4xl font-serif font-bold text-foreground group-hover:scale-110 transition-transform'>
+              2017
+            </div>
+            <div className='w-10 h-px bg-primary/30 my-1' />
+            <div className='text-[9px] font-bold text-muted-foreground uppercase tracking-widest'>
+              7+ Years Excellence
+            </div>
+          </div>
+
           {/* Badge */}
           <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/30 border border-secondary/50 text-secondary-foreground text-sm font-medium animate-in fade-in slide-in-from-bottom-4 duration-500'>
             <Globe className='w-4 h-4 text-primary animate-pulse' />
@@ -44,17 +56,19 @@ const Hero = () => {
               Explore Our Verticals
               <ArrowRight className='ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform' />
             </Button>
-            <Button
-              variant='outline'
-              size='lg'
-              className='h-14 px-8 rounded-2xl text-lg font-semibold border-2'
-            >
-              Contact Our Experts
-            </Button>
+            <Link href='#contact'>
+              <Button
+                variant='outline'
+                size='lg'
+                className='h-14 px-8 rounded-2xl text-lg font-semibold border-2'
+              >
+                Contact Our Experts
+              </Button>
+            </Link>
           </div>
 
           {/* Core Pillars */}
-          <div className='pt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-in fade-in duration-1000 delay-500'>
+          {/* <div className='pt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-in fade-in duration-1000 delay-500'>
             {[
               {
                 label: 'Strategic',
@@ -94,7 +108,7 @@ const Hero = () => {
                 </span>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

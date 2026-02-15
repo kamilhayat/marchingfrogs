@@ -1,6 +1,8 @@
 import Hero from '@/components/sections/hero';
 import About from '@/components/sections/about';
 import Services from '@/components/sections/services';
+import Contact from '@/components/sections/contact';
+import Values from '@/components/sections/values';
 
 export default function Home() {
   return (
@@ -8,7 +10,8 @@ export default function Home() {
       <Hero />
       <Services />
       <About />
-      {/* Add more sections as needed */}
+      <Values />
+      <Contact />
     </div>
   );
 }

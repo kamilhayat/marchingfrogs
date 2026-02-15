@@ -8,8 +8,70 @@ import {
   History,
   Unlock,
   BarChart4,
+  Target,
+  Eye,
+  Heart,
+  ShieldCheck,
+  Zap,
+  Award,
+  Users,
+  MessageSquare,
+  Recycle,
 } from 'lucide-react';
-import { Vertical, AboutContent, Service } from '@/types';
+import { Vertical, AboutContent, Service, CompanyValues } from '@/types';
+
+// ... existing verticals and about content ...
+
+export const COMPANY_VALUES: CompanyValues = {
+  mission: {
+    title: 'Our Mission',
+    description:
+      'To empower organizations worldwide through innovative, client-centric strategic partnerships and technology-enabled excellence.',
+  },
+  vision: {
+    title: 'Our Vision',
+    description:
+      'To be the global leader in multi-disciplinary solutions, setting new benchmarks for quality, integrity, and sustainable growth.',
+  },
+  values: [
+    {
+      title: 'Integrity & Professionalism',
+      description:
+        'Maintain ethical standards and build trust through professional conduct.',
+      icon: ShieldCheck,
+    },
+    {
+      title: 'Excellence & Quality',
+      description:
+        'Deliver high-impact, relevant content and a top-tier conference experience.',
+      icon: Award,
+    },
+    {
+      title: 'Inclusivity & Diversity',
+      description:
+        'Champion equal access and ensure all voices are respected and heard.',
+      icon: Users,
+    },
+    {
+      title: 'Client & Community Focus',
+      description:
+        'Prioritize the needs of attendees and the legal community, adapting through feedback.',
+      icon: Heart,
+    },
+    {
+      title: 'Collaboration & Innovation',
+      description:
+        'Foster teamwork and embrace new ideas and technologies to enhance engagement.',
+      icon: Zap,
+    },
+    {
+      title: 'Sustainability & Responsibility',
+      description:
+        'Commit to environmentally responsible practices and promote long-term positive impact for our community and planet.',
+      icon: Recycle,
+    },
+  ],
+};
 
 export const VERTICALS: Vertical[] = [
   {
@@ -102,3 +164,18 @@ export const SERVICES: Service[] = [
     icon: BarChart4,
   },
 ];
+
+export const CONTACT_DATA = {
+  title: 'Get in Touch',
+  subtitle: 'Contact Us',
+  description:
+    "Have a project in mind or need expert advice? Reach out to us and let's explore how we can achieve excellence together.",
+  email: 'info@marchingfrogs.com',
+  phone: '+91 123 456 7890',
+  address: 'Marching Frogs PVT LTD, Silicon Valley of India, Bangalore',
+  locations: [
+    { city: 'Bangalore', details: 'Corporate Headquarters, India' },
+    { city: 'Dubai', details: 'Strategic Hub, UAE' },
+    { city: 'Malaysia', details: 'Regional Office, SE Asia' },
+  ],
+};

@@ -1,9 +1,16 @@
 import { SERVICES } from '@/constants';
 import { ArrowRight } from 'lucide-react';
+import { GridPattern, WavyLines } from '@/components/sections/svg';
 
 const Services = () => {
   return (
-    <section className='py-16 bg-secondary/5' id='services'>
+    <section
+      className='py-8 bg-secondary/5 relative overflow-hidden'
+      id='services'
+    >
+      {/* Background Decor */}
+      <GridPattern />
+      <WavyLines />
       <div className='container mx-auto'>
         <div className='max-w-2xl mb-8 text-center mx-auto'>
           <h2 className='section-subtitle'>Our Services</h2>

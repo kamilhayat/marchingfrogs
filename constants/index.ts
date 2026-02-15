@@ -35,11 +35,15 @@ export const NAV_LINKS: NavLink[] = [
   },
   {
     title: 'About Us',
-    href: '/about',
+    href: '#about',
+  },
+  {
+    title: 'Our Values',
+    href: '#values',
   },
   {
     title: 'Contact',
-    href: '/contact',
+    href: '#contact',
   },
 ];
 

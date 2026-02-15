@@ -1,14 +1,22 @@
 import { CheckCircle2, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { VERTICALS, ABOUT_CONTENT } from '@/constants';
+import {
+  GeometricShapes,
+  GradientBlobs,
+  RadialBurst,
+} from '@/components/sections/svg';
 
 const About = () => {
   return (
     <section
-      className='py-16 bg-background relative overflow-hidden'
+      className='py-8 bg-background relative overflow-hidden'
       id='about'
     >
-      <div className='container mx-auto px-6 relative z-10'>
+      <GradientBlobs />
+      <GeometricShapes />
+      <RadialBurst />
+      <div className='container mx-auto relative z-10'>
         <div className='grid lg:grid-cols-2 gap-16 items-start'>
           {/* Main About Content */}
           <div className='space-y-10'>
@@ -51,10 +59,10 @@ const About = () => {
               <h4 className='text-2xl font-serif font-bold text-foreground'>
                 Our Specialised Verticals
               </h4>
-              <p className='section-desc text-base'>
+              {/* <p className='section-desc text-base'>
                 Delivering excellence across diverse industries through focused
                 expertise.
-              </p>
+              </p> */}
             </div>
 
             <div className='grid gap-4'>
@@ -91,7 +99,7 @@ const About = () => {
         </div>
 
         {/* Detailed Integrated Approach Section */}
-        <div className='mt-24 p-12 rounded-[3rem] bg-secondary/10 border border-secondary/20 relative overflow-hidden group'>
+        <div className='mt-10 p-12 rounded-[3rem] bg-secondary/10 border border-secondary/20 relative overflow-hidden group'>
           <div className='absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2' />
           <div className='relative z-10 grid lg:grid-cols-3 gap-12 items-center'>
             <div className='lg:col-span-2 space-y-6'>
