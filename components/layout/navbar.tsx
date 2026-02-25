@@ -21,9 +21,11 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
     <nav className='max-w-7xl mx-auto flex items-center justify-between px-6 py-4'>
       {/* Logo */}
       <Link href='/' className='flex items-center gap-2 group'>
-        <div className='w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-primary-foreground font-bold text-xl group-hover:rotate-12 transition-transform duration-300'>
-          M
-        </div>
+        <img
+          src='/logo-marching.jpeg'
+          alt='Marching Frogs Logo'
+          className='w-10 h-10 rounded-xl object-cover group-hover:rotate-12 transition-transform duration-300'
+        />
         <span className='font-serif text-2xl font-bold tracking-tight text-foreground'>
           Marching<span className='text-primary'>Frogs</span>
         </span>
