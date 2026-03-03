@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
@@ -8,11 +8,7 @@ import { cn } from '@/lib/utils';
 import { NAV_LINKS } from '@/constants';
 import { Button } from '@/components/ui/button';
 
-interface NavbarProps {
-  isScrolled?: boolean;
-}
-
-const Navbar = ({ isScrolled }: NavbarProps) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
@@ -22,13 +18,10 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
       {/* Logo */}
       <Link href='/' className='flex items-center gap-2 group'>
         <img
-          src='/logo-marching.jpeg'
+          src='/logo.png'
           alt='Marching Frogs Logo'
-          className='w-10 h-10 rounded-xl object-cover group-hover:rotate-12 transition-transform duration-300'
+          className='w-40 h-12 object-cover'
         />
-        <span className='font-serif text-2xl font-bold tracking-tight text-foreground'>
-          Marching<span className='text-primary'>Frogs</span>
-        </span>
       </Link>
 
       {/* Desktop Navigation */}
@@ -100,12 +93,14 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
 
       {/* Action Button */}
       <div className='hidden lg:flex items-center gap-4'>
-        <Button
-          size='lg'
-          className='rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all'
-        >
-          Get Started
-        </Button>
+        <Link href='/request-quote'>
+          <Button
+            size='lg'
+            className='rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all'
+          >
+            Request a Quote
+          </Button>
+        </Link>
       </div>
 
       <button
@@ -171,9 +166,11 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
           </div>
 
           <div className='pt-8 border-t border-border mt-auto'>
-            <Button className='w-full rounded-2xl py-7 text-lg shadow-xl shadow-primary/20'>
-              Get Started
-            </Button>
+            <Link href='/request-quote' onClick={() => setIsOpen(false)}>
+              <Button className='w-full rounded-2xl py-7 text-lg shadow-xl shadow-primary/20'>
+                Request a Quote
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
