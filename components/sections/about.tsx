@@ -5,7 +5,16 @@ import { GridPattern } from '@/components/sections/svg';
 
 const About = () => {
   return (
-    <section className='py-8 bg-background relative overflow-hidden' id='about'>
+    <section
+      className='py-20 relative overflow-hidden'
+      id='about'
+      style={{
+        background:
+          'linear-gradient(135deg, oklch(0.96 0.02 280) 0%, oklch(0.98 0.01 200) 50%, oklch(0.97 0.015 120) 100%)',
+      }}
+    >
+      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_oklch(0.88_0.06_280/0.15)_0%,_transparent_60%)]' />
+      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_oklch(0.88_0.05_150/0.12)_0%,_transparent_60%)]' />
       <GridPattern />
 
       <div className='container mx-auto px-4 md:px-0 relative z-10'>

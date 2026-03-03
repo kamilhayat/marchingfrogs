@@ -5,7 +5,11 @@ import { DottedConstellation, SectionDivider } from '@/components/sections/svg';
 
 const Hero = () => {
   return (
-    <section className='relative flex items-center pt-24 pb-12 overflow-hidden bg-primary/10'>
+    <section className='relative flex items-center pt-32 pb-24 overflow-hidden bg-background'>
+      <div className='bg-blob-primary top-[-100px] left-[-100px] opacity-40 animate-pulse' />
+      <div className='bg-blob-accent bottom-[-100px] right-[-100px] opacity-30 animate-pulse delay-700' />
+      <div className='bg-blob-secondary top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20' />
+
       <DottedConstellation />
       <SectionDivider />
 
@@ -35,7 +39,7 @@ const Hero = () => {
           {/* Heading */}
           <h1 className='section-title text-5xl! md:text-7xl!'>
             Empowering Global <br />
-            <span className='text-transparent bg-clip-text bg-linear-to-r from-primary to-primary bg-size-[200%_auto] animate-gradient-x'>
+            <span className='text-transparent bg-clip-text bg-linear-to-r from-primary via-accent to-primary animate-gradient-x'>
               Excellence.
             </span>
           </h1>

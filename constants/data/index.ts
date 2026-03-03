@@ -19,7 +19,13 @@ import {
   Recycle,
   ArrowUpRight,
 } from 'lucide-react';
-import { Vertical, AboutContent, Service, CompanyValues } from '@/types';
+import {
+  Vertical,
+  AboutContent,
+  Service,
+  CompanyValues,
+  EventCard,
+} from '@/types';
 
 // ... existing verticals and about content ...
 
@@ -80,7 +86,7 @@ export const VERTICALS: Vertical[] = [
     description:
       'Our flagship platform hosting high-level conferences in Dubai, Malaysia, India, and other global hubs for partners, counsel, and tech leaders.',
     icon: Scale,
-    color: 'bg-blue-500/10 text-blue-500',
+    color: 'bg-indigo-500/15 text-indigo-500',
     link: '/verticals/bgls',
   },
   {
@@ -88,7 +94,7 @@ export const VERTICALS: Vertical[] = [
     description:
       'Technical illustrations, prior art support, and research-driven documentation ensuring precision and compliance for IP professionals globally.',
     icon: PenTool,
-    color: 'bg-primary/10 text-primary',
+    color: 'bg-primary/15 text-primary',
     link: '/verticals/patent-drawing-hub',
   },
   {
@@ -96,7 +102,7 @@ export const VERTICALS: Vertical[] = [
     description:
       'Meetings, Incentives, Conferences, and Exhibitions management services delivering comprehensive and professional event solutions.',
     icon: Plane,
-    color: 'bg-accent/10 text-accent',
+    color: 'bg-emerald-500/15 text-emerald-500',
     link: '/verticals/mice',
   },
   {
@@ -104,7 +110,7 @@ export const VERTICALS: Vertical[] = [
     description:
       'Streamlining operations through data management, IT solutions, and customer acquisition strategies for global scalability.',
     icon: Settings,
-    color: 'bg-secondary-foreground/10 text-secondary-foreground',
+    color: 'bg-amber-500/15 text-amber-500',
     link: '/verticals/outsourcing-tech',
   },
 ];
@@ -133,36 +139,41 @@ export const ABOUT_CONTENT: AboutContent = {
   },
 };
 
-export const SERVICES: Service[] = [
+export const SERVICES: (Service & { color: string })[] = [
   {
     title: 'Invalidity / Opposition Search',
     description:
       'Comprehensive research to identify relevant prior art for challenging the validity of a patent in litigation or opposition proceedings.',
     icon: SearchX,
+    color: 'bg-rose-500/15 text-rose-500',
   },
   {
     title: 'Infringement & Evidence of Use Search',
     description:
       'Analytical mapping of patent claims to products or standards to identify potential infringement and gather evidence of use.',
     icon: Gavel,
+    color: 'bg-violet-500/15 text-violet-500',
   },
   {
     title: 'Prior Art Search',
     description:
       'Thorough investigation of existing technology and publications to determine the novelty and non-obviousness of an invention.',
     icon: History,
+    color: 'bg-sky-500/15 text-sky-500',
   },
   {
     title: 'Freedom to Operate (FTO) Search',
     description:
       'Strategic analysis to identify active patents that may be infringed by the commercialization of a new product or technology.',
     icon: Unlock,
+    color: 'bg-orange-500/15 text-orange-500',
   },
   {
     title: 'Patent Landscape & Competitive Intelligence',
     description:
       'In-depth analysis of patent trends and competitor portfolios to inform R&D strategy and identify market opportunities.',
     icon: BarChart4,
+    color: 'bg-emerald-500/15 text-emerald-500',
   },
 ];
 
@@ -243,3 +254,72 @@ export const CONTACT_DATA = {
     },
   ],
 };
+
+export const events: EventCard[] = [
+  {
+    id: '1',
+    title: 'BGLS 2025 DUBAI',
+    date: '24-25 September, 2025',
+    location: 'Park Regis Kris Kin',
+    area: 'Dubai, UAE',
+    image: '/events/dubai-event.jpeg',
+    description:
+      'Successfully concluded! Join us for future editions of this premier legal Conference.',
+    href: '/events/dubai-event',
+  },
+  {
+    id: '2',
+    title: 'BGLS 2025 DELHI',
+    date: '13 November, 2025',
+    location: 'Pride Plaza Aerocity, Delhi',
+    area: 'Delhi, India',
+    image: '/events/delhi.png',
+    description:
+      'Explore emerging technologies and leadership strategies in the digital era.',
+    href: '/events/delhi-event',
+  },
+  {
+    id: '3',
+    title: 'BGLS 2026 MALAYSIA',
+    date: '14 January, 2026',
+    location: 'AC, HOTEL BY MARRIOTT KUALA LUMPUR, MALAYSIA',
+    area: 'Malaysia',
+    image: '/events/malaysia-event-new.jpeg',
+    description:
+      'Discover how artificial intelligence is transforming industries and creating new opportunities.',
+    href: '/events/malaysia-event',
+  },
+  {
+    id: '4',
+    title: 'BGLS 2026 DUBAI',
+    date: '30-31 March, 2026',
+    location: 'Millennium Plaza Downtown Hotel, Dubai',
+    area: 'Dubai, UAE',
+    image: '/events/dubai-event-2026.jpeg',
+    description:
+      'Advancing excellence in legal practice and IP management, featuring discussions on legal technologies and cross-border dispute resolution.',
+    href: '/events/dubai-legal-IP-event',
+  },
+  {
+    id: '5',
+    title: 'BGLS 2026  MUMBAI',
+    date: '20 May, 2026',
+    location: 'TBA',
+    area: 'Mumbai, India',
+    image: '/events/mumbai-event.jpeg',
+    description:
+      'Join us for an exclusive legal Conference on Litigation, AI and Legal Tech with industry experts and networking opportunities.',
+    href: '/events/mumbai-litigation-ai-legal-tech',
+  },
+  {
+    id: '6',
+    title: 'BGLS 2026  BANGALORE',
+    date: '13 May, 2026',
+    location: 'TBA',
+    area: 'Bangalore, India',
+    image: '/events/bangalore.jpeg',
+    description:
+      'Join us for an exclusive legal Conference on Litigation, AI and Legal Tech with industry experts and networking opportunities.',
+    href: '',
+  },
+];

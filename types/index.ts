@@ -65,3 +65,21 @@ export interface CompanyValues {
   };
   values: ValueItem[];
 }
+
+export interface EventCard {
+  id: string;
+  title: string;
+  date: string;
+  location: string;
+  area?: string;
+  image: string;
+  description?: string;
+  href: string;
+}
+
+export interface FutureEventsProps {
+  events: EventCard[];
+  heading?: string;
+  subheading?: string;
+  showBuyPass?: boolean;
+}

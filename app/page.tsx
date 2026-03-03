@@ -6,16 +6,22 @@ import Footprint from '@/components/sections/footprint';
 import Services from '@/components/sections/services';
 import Contact from '@/components/sections/contact';
 import Values from '@/components/sections/values';
+import Stats from '@/components/sections/stats';
+import Testimonials from '@/components/sections/testimonials';
+import EventsSection from '@/components/sections/events';
 
 export default function Home() {
   return (
     <div className='flex flex-col w-full min-h-screen'>
       <Hero />
+      <Stats />
       <About />
       <Services />
       <Verticals />
+      <EventsSection />
       <Process />
       <Values />
+      <Testimonials />
       <Footprint />
       <Contact />
     </div>

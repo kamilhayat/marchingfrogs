@@ -191,12 +191,28 @@
 
 @layer utilities {
   .section-subtitle {
-    @apply inline-flex items-center gap-2 px-5 py-2 rounded-full bg-secondary/30 border border-secondary/50 text-secondary-foreground text-xs font-bold tracking-[0.2em] uppercase mb-4 shadow-sm transition-all hover:bg-secondary/40;
+    @apply inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black tracking-[0.2em] uppercase mb-4 shadow-xs transition-all hover:bg-primary/20;
   }
-  .section-title {
-    @apply text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight;
+  .bg-blob-primary {
+    @apply absolute w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none;
   }
-  .section-desc {
-    @apply text-lg text-muted-foreground leading-relaxed;
+  .bg-blob-accent {
+    @apply absolute w-[400px] h-[400px] bg-accent/20 rounded-full blur-[100px] pointer-events-none;
+  }
+  .bg-blob-secondary {
+    @apply absolute w-[300px] h-[300px] bg-secondary/30 rounded-full blur-[80px] pointer-events-none;
+  }
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 15s ease infinite;
+  }
+  @keyframes gradient-x {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 }

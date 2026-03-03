@@ -6,9 +6,15 @@ import { cn } from '@/lib/utils';
 const Verticals = () => {
   return (
     <section
-      className='py-8 bg-background relative overflow-hidden'
+      className='py-20 relative overflow-hidden'
       id='verticals'
+      style={{
+        background:
+          'linear-gradient(145deg, oklch(0.96 0.025 150) 0%, oklch(0.97 0.02 180) 50%, oklch(0.95 0.02 120) 100%)',
+      }}
     >
+      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.8_0.1_150/0.12)_0%,transparent_60%)]' />
+      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,oklch(0.7_0.1_200/0.08)_0%,transparent_60%)]' />
       <GridPattern />
 
       <div className='container mx-auto px-4 md:px-0 relative z-10'>

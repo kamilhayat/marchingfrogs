@@ -1,91 +1,129 @@
-'use client';
-import { CONTACT_DATA } from '@/constants';
-import { MapPin, ExternalLink } from 'lucide-react';
-import { GridPattern } from '@/components/sections/svg';
-import InteractiveMap from './interactive-map';
-import React from 'react';
+import { Flag, Rocket, MapPin, Globe, Target } from 'lucide-react';
+
+const milestones = [
+  {
+    year: '2018',
+    title: 'The Inception',
+    description:
+      'Founded with a core team in India, driven by a vision to redefine IP and legal support services globally.',
+    icon: Flag,
+    color: 'bg-blue-500',
+    text: 'text-blue-600',
+  },
+  {
+    year: '2020',
+    title: 'Service Expansion',
+    description:
+      'Scaled operations and broadened our multi-disciplinary expertise to serve complex global IP requirements.',
+    icon: Rocket,
+    color: 'bg-violet-500',
+    text: 'text-violet-600',
+  },
+  {
+    year: '2022',
+    title: 'SE Asia Presence',
+    description:
+      'Established a strategic hub in Malaysia to accelerate our footprint and client delivery in the APAC region.',
+    icon: MapPin,
+    color: 'bg-emerald-500',
+    text: 'text-emerald-600',
+  },
+  {
+    year: '2024',
+    title: 'Middle East Hub',
+    description:
+      'Launched our Dubai operations and pioneered the prestigious Bespoke Global Legal Summits.',
+    icon: Globe,
+    color: 'bg-amber-500',
+    text: 'text-amber-600',
+  },
+  {
+    year: '2025+',
+    title: 'Global Scale',
+    description:
+      'Operating across 3 major hubs, serving 50+ elite clients in 20+ countries, delivering 24/7 excellence.',
+    icon: Target,
+    color: 'bg-primary',
+    text: 'text-primary',
+  },
+];
 
 const Footprint = () => {
-  const locations = CONTACT_DATA.locations.map((loc) => ({
-    city: loc.city,
-    position: { lat: loc.coordinates[1], lng: loc.coordinates[0] },
-  }));
-
   return (
-    <section
-      className='py-12 bg-background relative overflow-hidden'
-      id='footprint'
-    >
-      <GridPattern />
+    <section className='py-24 relative overflow-hidden bg-white' id='footprint'>
+      {/* Premium subtle background grid */}
+      <div className='absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]' />
+      <div className='absolute inset-0 bg-white/40' />
 
-      <div className='container mx-auto px-4 md:px-0 relative z-10'>
-        <div className='flex flex-col lg:flex-row items-center gap-16'>
-          {/* Content Side */}
-          <div className='w-full lg:w-1/2 space-y-12 lg:order-1'>
-            <div className='space-y-6'>
-              <div className='section-subtitle'>Global Scale</div>
-              <h2 className='section-title font-sans font-bold text-foreground leading-tight tracking-tight'>
-                Operational{' '}
-                <span className='text-primary italic font-serif'>
-                  Footprint
-                </span>
-              </h2>
-              <p className='section-desc text-lg'>
-                Leveraging strategically positioned hubs across India, UAE, and
-                SE Asia to deliver 24/7 excellence and rapid-response
-                scalability.
-              </p>
-            </div>
+      {/* Subtle ambient light */}
+      <div className='absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none' />
 
-            <div className='grid gap-6'>
-              {CONTACT_DATA.locations.map((loc) => (
-                <div
-                  key={loc.city}
-                  className='group p-6 rounded-[2.5rem] bg-card border border-border hover:border-primary/30 transition-all duration-500 flex items-center justify-between shadow-sm hover:shadow-md'
-                >
-                  <div className='flex items-center gap-6'>
-                    <div className='w-14 h-14 rounded-3xl bg-secondary border border-border flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500'>
-                      <MapPin className='w-6 h-6' />
-                    </div>
-                    <div className='space-y-1'>
-                      <h4 className='text-xl font-bold text-foreground group-hover:text-primary transition-colors'>
-                        {loc.city} Hub
-                      </h4>
-                      <p className='text-muted-foreground font-medium tracking-wide uppercase text-[10px]'>
-                        {loc.details}
-                      </p>
-                    </div>
-                  </div>
-                  <div className='w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground/30 group-hover:text-primary group-hover:bg-primary/10 transition-all cursor-pointer'>
-                    <ExternalLink className='w-4 h-4' />
-                  </div>
-                </div>
-              ))}
-            </div>
+      <div className='container mx-auto px-6 max-w-7xl relative z-10'>
+        {/* Header */}
+        <div className='text-center mb-20'>
+          <h2 className='text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 tracking-tight'>
+            Our Evolution &{' '}
+            <span className='text-primary italic font-serif'>Footprint</span>
+          </h2>
+          <p className='text-slate-500 text-lg max-w-2xl mx-auto'>
+            Tracing our path from a visionary startup in 2018 to a global
+            powerhouse in IP, legal support, and elite summits.
+          </p>
+        </div>
+
+        {/* Premium Horizontal Path Timeline */}
+        <div className='relative mt-12 mb-16'>
+          {/* Continuous tracking line (Desktop) */}
+          <div className='hidden lg:block absolute top-[28px] left-[50px] right-[50px] h-[2px] bg-slate-100'>
+            <div className='absolute inset-0 bg-linear-to-r from-blue-500 via-emerald-400 to-primary opacity-30 shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]' />
           </div>
 
-          {/* Map Side */}
-          <div className='w-full lg:w-1/2 relative lg:order-2'>
-            <div className='relative w-full aspect-square md:aspect-video lg:aspect-square bg-slate-50 rounded-[3rem] border border-border overflow-hidden shadow-2xl'>
-              <InteractiveMap locations={locations} />
+          <div className='grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-4'>
+            {milestones.map((milestone, index) => {
+              const Icon = milestone.icon;
+              return (
+                <div
+                  key={milestone.year}
+                  className='group relative flex flex-row lg:flex-col items-start gap-6 lg:gap-8'
+                >
+                  {/* Timeline Node */}
+                  <div className='relative shrink-0 lg:mx-auto mt-1'>
+                    {/* Permanent glowing rings */}
+                    <div className='absolute inset-0 bg-white rounded-full scale-125 shadow-sm' />
+                    <div
+                      className={`absolute inset-0 ${milestone.color} rounded-full opacity-15 scale-[1.4]`}
+                    />
 
-              {/* Legend / Overlay */}
-              <div className='absolute bottom-8 right-8 p-5 bg-white/95 backdrop-blur-md rounded-4xl border border-border shadow-2xl flex flex-col gap-3 z-20'>
-                <div className='flex items-center gap-3'>
-                  <div className='w-3 h-3 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]' />
-                  <span className='text-[10px] font-black text-foreground uppercase tracking-widest'>
-                    Active Global Hubs
-                  </span>
-                </div>
-              </div>
+                    {/* The Icon Container - now active by default */}
+                    <div
+                      className={`relative w-14 h-14 rounded-full ${milestone.color} shadow-lg shadow-${milestone.color}/30 flex items-center justify-center z-10 group-hover:-translate-y-1 transition-transform duration-300`}
+                    >
+                      <Icon className='w-6 h-6 text-white' />
+                    </div>
 
-              {/* Decorative Corner Element */}
-              <div className='absolute top-8 left-8 p-4 border border-border rounded-2xl bg-white/50 backdrop-blur-sm z-20'>
-                <div className='text-[10px] font-black text-muted-foreground/50 uppercase tracking-[0.5em]'>
-                  Live Network
+                    {/* Mobile vertical line */}
+                    {index !== milestones.length - 1 && (
+                      <div className='lg:hidden absolute top-14 left-1/2 -translate-x-1/2 w-[2px] h-[calc(100%+36px)] bg-slate-200' />
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className='flex-1 lg:text-center pt-2 lg:pt-0'>
+                    <div
+                      className={`inline-block px-3 py-1 rounded-full ${milestone.color} text-white font-black text-xs tracking-widest shadow-md mb-4 lg:-mt-2 lg:mb-5 transition-transform group-hover:-translate-y-1`}
+                    >
+                      {milestone.year}
+                    </div>
+                    <h3 className={`text-xl font-bold ${milestone.text} mb-3`}>
+                      {milestone.title}
+                    </h3>
+                    <p className='text-slate-500 leading-relaxed text-sm font-medium'>
+                      {milestone.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>
