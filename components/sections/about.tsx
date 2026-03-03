@@ -28,7 +28,7 @@ const About = () => {
               {ABOUT_CONTENT.descriptions.map((desc, index) => (
                 <p
                   key={index}
-                  className='text-xl md:text-2xl text-muted-foreground font-light leading-relaxed border-l-2 border-primary/10 pl-8'
+                  className='text-lg md:text-xl text-muted-foreground font-light leading-relaxed border-l-2 border-primary/10 pl-8'
                 >
                   {desc}
                 </p>
@@ -57,7 +57,7 @@ const About = () => {
             {/* Decorative Background Aura */}
             <div className='absolute inset-0 bg-primary/5 blur-[120px] rounded-full animate-pulse' />
 
-            <div className='relative p-10 md:p-16 rounded-[4rem] bg-card border border-border shadow-2xl overflow-hidden group'>
+            <div className='relative p-8 md:p-12 rounded-3xl bg-card border border-border shadow-2xl overflow-hidden group'>
               {/* Floating Elements */}
               <div className='absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-1000' />
               <div className='absolute -bottom-10 -left-10 w-40 h-40 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-1000' />
@@ -67,10 +67,10 @@ const About = () => {
                   {/* <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border text-[10px] font-black uppercase tracking-[0.4em] text-primary'>
                     The Methodology
                   </div> */}
-                  <h4 className='text-3xl md:text-5xl font-serif font-bold text-foreground leading-tight'>
+                  <h4 className='text-2xl md:text-4xl font-serif font-bold text-foreground leading-tight'>
                     {ABOUT_CONTENT.integratedApproach.title}
                   </h4>
-                  <p className='text-lg md:text-xl text-muted-foreground leading-relaxed font-light'>
+                  <p className='text-base md:text-lg text-muted-foreground leading-relaxed font-light'>
                     {ABOUT_CONTENT.integratedApproach.description}
                   </p>
                 </div>

@@ -21,7 +21,7 @@ const Verticals = () => {
               Specialised Verticals
             </span>
           </h2>
-          <p className='text-xl md:text-2xl text-muted-foreground font-light leading-relaxed'>
+          <p className='text-lg md:text-xl text-muted-foreground font-light leading-relaxed'>
             Delivering industry-leading excellence through dedicated business
             units, each a leader in its respective domain.
           </p>
@@ -32,7 +32,7 @@ const Verticals = () => {
           {VERTICALS.map((vertical) => (
             <div
               key={vertical.title}
-              className='group relative p-8 rounded-[3.5rem] bg-card border border-border hover:border-primary/40 transition-all duration-700 hover:shadow-2xl overflow-hidden'
+              className='group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-700 hover:shadow-2xl overflow-hidden'
             >
               {/* Background Decor */}
               <div className='absolute -top-20 -right-20 w-80 h-80 rounded-full blur-[100px] bg-primary/10 transition-all duration-700' />
@@ -41,11 +41,11 @@ const Verticals = () => {
                 <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6'>
                   <div
                     className={cn(
-                      'w-20 h-20 rounded-4xl flex items-center justify-center transition-all duration-500 shadow-xl group-hover:scale-110 group-hover:rotate-3',
+                      'w-16 h-16 rounded-3xl flex items-center justify-center transition-all duration-500 shadow-xl group-hover:scale-110 group-hover:rotate-3',
                       vertical.color,
                     )}
                   >
-                    <vertical.icon className='w-10 h-10' />
+                    <vertical.icon className='w-8 h-8' />
                   </div>
                   <div className='flex items-center gap-4 text-primary transition-colors font-black uppercase tracking-[0.4em] text-[10px]'>
                     Strategic Vertical <ArrowRight className='w-4 h-4' />
@@ -53,10 +53,10 @@ const Verticals = () => {
                 </div>
 
                 <div className='space-y-4'>
-                  <h3 className='text-3xl md:text-4xl font-bold text-foreground group-hover:text-primary transition-colors duration-300'>
+                  <h3 className='text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300'>
                     {vertical.title}
                   </h3>
-                  <p className='text-lg md:text-xl text-muted-foreground leading-relaxed font-light group-hover:text-muted-foreground transition-colors duration-500'>
+                  <p className='text-base md:text-lg text-muted-foreground leading-relaxed font-light group-hover:text-muted-foreground transition-colors duration-500'>
                     {vertical.description}
                   </p>
                 </div>

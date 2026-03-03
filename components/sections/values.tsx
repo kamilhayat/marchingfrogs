@@ -22,7 +22,7 @@ const Values = () => {
           <div className='section-subtitle bg-white/5! border-white/10! text-white!'>
             Our Foundation
           </div>
-          <h3 className='text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-white leading-tight'>
+          <h3 className='text-2xl md:text-3xl lg:text-4xl font-sans font-bold text-white leading-tight'>
             Built on{' '}
             <span className='text-primary italic relative inline-block'>
               Purpose
@@ -34,7 +34,7 @@ const Values = () => {
         </div>
 
         {/* Mission & Vision - Balanced High-Impact Split */}
-        <div className='relative mb-20 border border-white/10 rounded-[3rem] md:rounded-[5rem] bg-white/2 backdrop-blur-xl overflow-hidden group transition-all duration-1000 hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/30'>
+        <div className='relative mb-20 border border-white/10 rounded-3xl bg-white/2 backdrop-blur-xl overflow-hidden group transition-all duration-1000 hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/30'>
           {/* Central Connecting Node (Hidden on mobile) */}
           <div className='absolute left-1/2 top-20 bottom-20 w-px bg-white/10 hidden lg:block overflow-hidden'>
             <div className='absolute top-0 w-full h-full bg-linear-to-b from-transparent via-primary/50 to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-3000 ease-linear' />
@@ -47,12 +47,12 @@ const Values = () => {
 
           <div className='grid lg:grid-cols-2 relative z-10'>
             {/* Mission Column */}
-            <div className='p-6 md:p-10 relative overflow-hidden group/m border-b lg:border-b-0 lg:border-r border-white/10'>
+            <div className='p-6 md:p-8 relative overflow-hidden group/m border-b lg:border-b-0 lg:border-r border-white/10'>
               <div className='absolute -top-20 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px] transition-all duration-700 group-hover/m:bg-primary/20' />
 
               {/* Icon in top right corner */}
-              <div className='absolute top-12 right-12 w-24 h-24 rounded-4xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover/m:scale-110 group-hover/m:rotate-6 transition-all duration-500 shadow-2xl shadow-primary/40 z-20 rotate-6 md:rotate-0'>
-                <Target className='w-12 h-12' />
+              <div className='absolute top-12 right-12 w-16 h-16 rounded-3xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover/m:scale-110 group-hover/m:rotate-6 transition-all duration-500 shadow-2xl shadow-primary/40 z-20 rotate-6 md:rotate-0'>
+                <Target className='w-8 h-8' />
               </div>
 
               <div className='relative z-10 space-y-12'>
@@ -61,10 +61,10 @@ const Values = () => {
                     <div className='w-1.5 h-1.5 rounded-full bg-primary animate-pulse' />
                     The Mission
                   </div>
-                  <h3 className='text-3xl md:text-5xl font-serif font-bold text-white leading-[1.05] tracking-tight pr-24'>
+                  <h3 className='text-2xl md:text-3xl font-serif font-bold text-white leading-[1.05] tracking-tight pr-24'>
                     {COMPANY_VALUES.mission.title}
                   </h3>
-                  <p className='text-2xl text-white/60 font-light leading-relaxed max-w-xl italic border-l-2 border-primary/40 pl-8'>
+                  <p className='text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-xl italic border-l-2 border-primary/40 pl-8'>
                     "{COMPANY_VALUES.mission.description}"
                   </p>
                 </div>
@@ -77,12 +77,12 @@ const Values = () => {
             </div>
 
             {/* Vision Column */}
-            <div className='p-6 md:p-10 relative overflow-hidden group/v bg-white/2'>
+            <div className='p-6 md:p-8 relative overflow-hidden group/v bg-white/2'>
               <div className='absolute -bottom-20 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-[100px] transition-all duration-700 group-hover/v:bg-accent/20' />
 
               {/* Icon in top right corner */}
-              <div className='absolute top-6 md:top-12 left-6 md:left-auto md:right-12 w-24 h-24 rounded-4xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20 group-hover/v:scale-110 group-hover/v:-rotate-6 transition-all duration-500 shadow-2xl shadow-accent/40 z-20 rotate-6 md:rotate-0'>
-                <Eye className='w-12 h-12' />
+              <div className='absolute top-6 md:top-12 left-6 md:left-auto md:right-12 w-16 h-16 rounded-3xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20 group-hover/v:scale-110 group-hover/v:-rotate-6 transition-all duration-500 shadow-2xl shadow-accent/40 z-20 rotate-6 md:rotate-0'>
+                <Eye className='w-8 h-8' />
               </div>
 
               <div className='relative z-10 space-y-12 text-right lg:text-left'>
@@ -91,10 +91,10 @@ const Values = () => {
                     The Vision
                     <div className='w-1.5 h-1.5 rounded-full bg-accent animate-pulse' />
                   </div>
-                  <h3 className='text-3xl md:text-5xl font-serif font-bold text-white leading-[1.05] tracking-tight pr-24 lg:pr-32'>
+                  <h3 className='text-2xl md:text-3xl font-serif font-bold text-white leading-[1.05] tracking-tight pr-24 lg:pr-32'>
                     {COMPANY_VALUES.vision.title}
                   </h3>
-                  <p className='text-2xl text-white/60 font-light leading-relaxed max-w-xl ml-auto lg:ml-0 border-r-2 lg:border-r-0 lg:border-l-2 border-accent/40 pr-8 lg:pr-0 lg:pl-8'>
+                  <p className='text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-xl ml-auto lg:ml-0 border-r-2 lg:border-r-0 lg:border-l-2 border-accent/40 pr-8 lg:pr-0 lg:pl-8'>
                     "{COMPANY_VALUES.vision.description}"
                   </p>
                 </div>
@@ -116,7 +116,7 @@ const Values = () => {
               <div className='section-subtitle m-0 bg-white/5! border-white/10! text-white!'>
                 The Principles
               </div>
-              <h3 className='text-4xl md:text-5xl font-serif font-bold text-white leading-tight'>
+              <h3 className='text-3xl md:text-4xl font-serif font-bold text-white leading-tight'>
                 Core Values
               </h3>
             </div>

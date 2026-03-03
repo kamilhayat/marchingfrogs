@@ -19,7 +19,7 @@ const Process = () => {
               Marching Method
             </span>
           </h2>
-          <p className='text-xl text-muted-foreground font-light leading-relaxed max-w-2xl'>
+          <p className='text-lg text-muted-foreground font-light leading-relaxed max-w-2xl'>
             A precision-engineered lifecycle designed to transform organizations
             into global leaders through technology and strategy.
           </p>
@@ -37,7 +37,7 @@ const Process = () => {
             >
               {/* Step Number & Connector */}
               <div className='relative z-20'>
-                <div className='w-16 h-16 rounded-full bg-secondary border border-border flex items-center justify-center text-2xl font-black text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl'>
+                <div className='w-14 h-14 rounded-full bg-secondary border border-border flex items-center justify-center text-xl font-black text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl'>
                   {index + 1}
                 </div>
                 {/* Glowing Pulse Effect */}
@@ -45,17 +45,17 @@ const Process = () => {
               </div>
 
               {/* Step Content Card */}
-              <div className='grow p-10 rounded-[3rem] bg-card border border-border hover:border-primary/20 transition-all duration-500 hover:shadow-2xl relative overflow-hidden'>
+              <div className='grow p-8 rounded-3xl bg-card border border-border hover:border-primary/20 transition-all duration-500 hover:shadow-2xl relative overflow-hidden'>
                 {/* Icon in top right */}
                 <div className='absolute top-8 right-8 text-secondary group-hover:text-primary/10 transition-colors duration-700'>
-                  <step.icon className='w-16 h-16' />
+                  <step.icon className='w-12 h-12' />
                 </div>
 
                 <div className='relative z-10 space-y-4'>
-                  <h3 className='text-2xl font-bold text-foreground group-hover:text-primary transition-colors'>
+                  <h3 className='text-xl font-bold text-foreground group-hover:text-primary transition-colors'>
                     {step.title}
                   </h3>
-                  <p className='text-lg text-muted-foreground leading-relaxed font-light max-w-3xl'>
+                  <p className='text-base text-muted-foreground leading-relaxed font-light max-w-3xl'>
                     {step.description}
                   </p>
                 </div>

@@ -28,7 +28,7 @@ const Services = () => {
           {SERVICES.map((service, index) => (
             <div
               key={service.title}
-              className='group relative p-6 rounded-[2.5rem] bg-white border border-border hover:border-primary/30 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-3 overflow-hidden'
+              className='group relative p-6 rounded-3xl bg-white border border-border hover:border-primary/30 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-3 overflow-hidden'
             >
               {/* Background Glow */}
               <div className='absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-[80px] group-hover:bg-primary/10 transition-all duration-700' />
@@ -43,7 +43,7 @@ const Services = () => {
                 </div>
 
                 <div className='space-y-4 grow'>
-                  <h4 className='text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 tracking-tight'>
+                  <h4 className='text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 tracking-tight'>
                     {service.title}
                   </h4>
                   <p className='text-base text-muted-foreground leading-relaxed font-light  group-hover:text-foreground transition-colors duration-500'>
@@ -70,13 +70,13 @@ const Services = () => {
           ))}
 
           {/* Call to Action Card */}
-          <div className='relative p-10 rounded-[2.5rem] bg-linear-to-br from-primary/5 to-accent/5 border border-primary/20 hover:border-primary/50 transition-all duration-700 flex flex-col justify-center items-center text-center overflow-hidden group cursor-pointer'>
+          <div className='relative p-8 rounded-3xl bg-linear-to-br from-primary/5 to-accent/5 border border-primary/20 hover:border-primary/50 transition-all duration-700 flex flex-col justify-center items-center text-center overflow-hidden group cursor-pointer'>
             <div className='absolute inset-0 bg-linear-to-b from-transparent via-white/40 to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-2000' />
             <div className='relative z-10 space-y-6'>
-              <div className='w-20 h-20 rounded-full bg-white flex items-center justify-center text-primary mx-auto shadow-xl border border-primary/10 group-hover:scale-110 transition-transform'>
-                <Target className='w-10 h-10' />
+              <div className='w-16 h-16 rounded-full bg-white flex items-center justify-center text-primary mx-auto shadow-xl border border-primary/10 group-hover:scale-110 transition-transform'>
+                <Target className='w-8 h-8' />
               </div>
-              <h4 className='text-3xl font-bold text-foreground'>
+              <h4 className='text-2xl font-bold text-foreground'>
                 Need a Tailored Strategy?
               </h4>
               <p className='text-muted-foreground'>
