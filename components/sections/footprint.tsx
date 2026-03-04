@@ -50,7 +50,7 @@ const milestones = [
 
 const Footprint = () => {
   return (
-    <section className='py-24 relative overflow-hidden bg-white' id='footprint'>
+    <section className='relative overflow-hidden bg-white' id='footprint'>
       {/* Premium subtle background grid */}
       <div className='absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]' />
       <div className='absolute inset-0 bg-white/40' />
@@ -58,9 +58,9 @@ const Footprint = () => {
       {/* Subtle ambient light */}
       <div className='absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none' />
 
-      <div className='container mx-auto px-6 max-w-7xl relative z-10'>
+      <div className='max-container padding-container-sm relative z-10'>
         {/* Header */}
-        <div className='text-center mb-20'>
+        <div className='text-center mb-12'>
           <h2 className='text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 tracking-tight'>
             Our Evolution &{' '}
             <span className='text-primary italic font-serif'>Footprint</span>

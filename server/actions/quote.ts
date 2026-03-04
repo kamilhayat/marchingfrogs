@@ -1,13 +1,14 @@
 'use server';
 
-import connectDB from '@/lib/mongodb';
-import Quote from '@/models/Quote';
+import connectDB from '@/server/mongodb';
+import Quote from '@/server/models/Quote';
 import { z } from 'zod';
 
 const quoteSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
-  projectType: z.string().min(1, 'Please select a project type'),
+  projectType: z.string().optional(),
+  subject: z.string().optional(),
   relevantPatents: z.string().optional(),
   additionalDetails: z.string().optional(),
   referredBy: z.string().optional(),

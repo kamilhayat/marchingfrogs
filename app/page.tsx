@@ -21,7 +21,6 @@ export default function Home() {
       <EventsSection />
       <Process />
       <Values />
-      <Testimonials />
       <Footprint />
       <Contact />
     </div>

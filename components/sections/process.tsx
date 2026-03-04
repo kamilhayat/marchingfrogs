@@ -3,44 +3,32 @@ import { ArrowRight, ChevronRight } from 'lucide-react';
 
 const Process = () => {
   return (
-    <section
-      className='py-24 relative overflow-hidden bg-slate-50'
-      id='process'
-    >
-      {/* Light subtle background elements */}
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.9_0.05_260/0.4)_0%,transparent_50%)]' />
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,oklch(0.85_0.03_280/0.3)_0%,transparent_50%)]' />
-
-      {/* Premium dot pattern overlay */}
+    <section className='relative overflow-hidden bg-slate-50' id='process'>
       <div className='absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] bg-size-[24px_24px] opacity-40' />
 
-      <div className='container mx-auto px-6 relative z-10 max-w-7xl'>
-        {/* Header */}
-        <div className='text-center max-w-2xl mx-auto mb-16 space-y-4'>
-          <div className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-[10px] font-black tracking-[0.2em] uppercase shadow-sm'>
+      <div className='max-container padding-container-sm relative z-10'>
+        <div className='text-center max-w-2xl mx-auto mb-12 space-y-4'>
+          <div className='section-subtitle'>
             <span className='w-2 h-2 rounded-full bg-primary animate-pulse' />
             Execution Framework
           </div>
-          <h2 className='text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight tracking-tight'>
+          <h2 className='section-title'>
             The{' '}
-            <span className='text-transparent bg-clip-text bg-linear-to-r from-primary via-violet-500 to-accent italic'>
+            <span className='text-transparent bg-clip-text bg-linear-to-r from-primary via-primary to-primary italic'>
               Marching Method
             </span>
           </h2>
-          <p className='text-slate-500 text-base md:text-lg font-medium leading-relaxed'>
+          <p className='section-desc'>
             A precision-engineered lifecycle designed to transform organizations
             into global leaders through technology and strategy.
           </p>
         </div>
-
-        {/* Compact Horizontal Steps Grid */}
         <div className='relative mt-12'>
-          {/* Continuous tracking line (Desktop) */}
           <div className='hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-[2px] bg-slate-200'>
             <div className='absolute inset-0 bg-linear-to-r from-primary/20 via-primary/50 to-primary/20 shadow-[0_0_10px_rgba(var(--primary-rgb),0.2)]' />
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 '>
             {PROCESS_STEPS.map((step, index) => {
               const numberStr = `0${index + 1}`;
               const isLast = index === PROCESS_STEPS.length - 1;
@@ -72,15 +60,6 @@ const Process = () => {
                     {/* Mobile vertical line connector */}
                     {!isLast && (
                       <div className='lg:hidden absolute top-24 w-[2px] h-[calc(100%+2rem)] bg-slate-200' />
-                    )}
-
-                    {/* Desktop horizontal arrow connector */}
-                    {!isLast && (
-                      <div className='hidden lg:flex absolute top-[40px] -right-[calc(0.75rem)] translate-x-1/2 z-20 items-center justify-center '>
-                        <div className='p-1 rounded-full bg-white border border-slate-200 shadow-sm text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-colors duration-300'>
-                          <ChevronRight className='w-4 h-4' />
-                        </div>
-                      </div>
                     )}
                   </div>
 

@@ -11,9 +11,9 @@
   --card-foreground: oklch(0.3211 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.3211 0 0);
-  --primary: oklch(0.5676 0.2021 283.0838);
+  --primary: #f47e3a;
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.8214 0.072 249.3482);
+  --secondary: #40697b;
   --secondary-foreground: oklch(0.3211 0 0);
   --muted: oklch(0.8202 0.0213 91.6163);
   --muted-foreground: oklch(0.5382 0 0);
@@ -23,7 +23,7 @@
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.8699 0 0);
   --input: oklch(0.8699 0 0);
-  --ring: oklch(0.5676 0.2021 283.0838);
+  --ring: #f47e3a;
   --chart-1: oklch(0.5676 0.2021 283.0838);
   --chart-2: oklch(0.5261 0.1705 314.6534);
   --chart-3: oklch(0.339 0.1793 301.6848);
@@ -71,9 +71,9 @@
   --card-foreground: oklch(0.9219 0 0);
   --popover: oklch(0.321 0.0078 223.6661);
   --popover-foreground: oklch(0.9219 0 0);
-  --primary: oklch(0.5676 0.2021 283.0838);
+  --primary: #f47e3a;
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.339 0.1793 301.6848);
+  --secondary: #40697b;
   --secondary-foreground: oklch(0.9219 0 0);
   --muted: oklch(0.3867 0 0);
   --muted-foreground: oklch(0.7155 0 0);
@@ -83,7 +83,7 @@
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.3867 0 0);
   --input: oklch(0.3867 0 0);
-  --ring: oklch(0.5676 0.2021 283.0838);
+  --ring: #f47e3a;
   --chart-1: oklch(0.5676 0.2021 283.0838);
   --chart-2: oklch(0.5261 0.1705 314.6534);
   --chart-3: oklch(0.339 0.1793 301.6848);
@@ -190,6 +190,16 @@
 }
 
 @layer utilities {
+  .max-container {
+    @apply mx-auto max-w-[1420px];
+  }
+
+  .padding-container-sm {
+    @apply p-6 px-4 md:px-6 lg:p-10;
+  }
+  .section-title {
+    @apply text-3xl lg:text-4xl xl:text-5xl font-serif font-bold text-foreground leading-tight;
+  }
   .section-subtitle {
     @apply inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black tracking-[0.2em] uppercase mb-4 shadow-xs transition-all hover:bg-primary/20;
   }

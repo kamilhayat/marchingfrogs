@@ -22,7 +22,7 @@ const Hero = () => {
               EST.
             </div>
             <div className='text-4xl font-serif font-bold text-foreground group-hover:scale-110 transition-transform'>
-              2017
+              2018
             </div>
             <div className='w-10 h-px bg-primary/30 my-1' />
             <div className='text-[9px] font-bold text-muted-foreground uppercase tracking-widest'>
@@ -31,16 +31,16 @@ const Hero = () => {
           </div>
 
           {/* Badge */}
-          <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/30 border border-secondary/50 text-secondary-foreground text-sm font-medium animate-in fade-in slide-in-from-bottom-4 duration-500'>
+          <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/30 border border-primary/50 text-primary-foreground text-sm font-medium animate-in fade-in slide-in-from-bottom-4 duration-500'>
             <Globe className='w-4 h-4 text-primary animate-pulse' />
             Global Multi-Disciplinary Enterprise
           </div>
 
           {/* Heading */}
-          <h1 className='section-title text-5xl! md:text-7xl!'>
+          <h1 className='section-title text-5xl! md:text-7xl! font-semibold'>
             Empowering Global <br />
-            <span className='text-transparent bg-clip-text bg-linear-to-r from-primary via-accent to-primary animate-gradient-x'>
-              Excellence.
+            <span className='text-transparent bg-clip-text bg-linear-to-r from-primary to-primary animate-gradient-x'>
+              Excellence
             </span>
           </h1>
 
@@ -53,13 +53,15 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className='flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300'>
-            <Button
-              size='lg'
-              className='h-14 px-8 rounded-2xl text-lg font-semibold shadow-xl shadow-primary/25 hover:shadow-primary/40 transition-all group'
-            >
-              Explore Our Verticals
-              <ArrowRight className='ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform' />
-            </Button>
+            <Link href='#verticals'>
+              <Button
+                size='lg'
+                className='h-14 px-8 rounded-2xl text-lg font-semibold shadow-xl shadow-primary/25 hover:shadow-primary/40 transition-all group'
+              >
+                Explore Our Verticals
+                <ArrowRight className='ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform' />
+              </Button>
+            </Link>
             <Link href='#contact'>
               <Button
                 variant='outline'

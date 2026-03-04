@@ -1,13 +1,7 @@
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  MessageSquare,
-  ArrowRight,
-} from 'lucide-react';
+import { Mail, Phone, MapPin, MessageSquare, ArrowRight } from 'lucide-react';
 import { CONTACT_DATA } from '@/constants';
 import Link from 'next/link';
+import { ContactForm } from '@/components/forms/ContactForm';
 
 const contactMethods = [
   {
@@ -45,18 +39,10 @@ const contactMethods = [
 const Contact = () => {
   return (
     <section
-      className='py-20 relative overflow-hidden'
+      className='relative overflow-hidden bg-linear-to-br from-primary/5 via-primary/10 to-primary/5'
       id='contact'
-      style={{
-        background:
-          'linear-gradient(150deg, oklch(0.97 0.01 280) 0%, oklch(0.96 0.015 260) 50%, oklch(0.97 0.01 300) 100%)',
-      }}
     >
-      {/* Soft background radials */}
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,oklch(0.8_0.08_280/0.12)_0%,transparent_60%)]' />
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,oklch(0.75_0.06_300/0.08)_0%,transparent_60%)]' />
-
-      <div className='container mx-auto px-4 md:px-0 relative z-10'>
+      <div className='max-container padding-container-sm relative z-10'>
         {/* Header – Centered */}
         <div className='text-center mb-16 space-y-3'>
           <div className='section-subtitle mx-auto'>Contact Us</div>
@@ -118,80 +104,9 @@ const Contact = () => {
 
           {/* Right — form */}
           <div className='lg:col-span-3'>
-            <div className='relative p-8 md:p-10 rounded-3xl bg-white/80 backdrop-blur-sm border border-primary/10 shadow-2xl shadow-primary/5 overflow-hidden'>
-              {/* Decorative corner blob */}
-              <div className='absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none' />
-              <div className='absolute -bottom-20 -left-20 w-48 h-48 bg-accent/5 rounded-full blur-3xl pointer-events-none' />
-
-              <div className='relative z-10'>
-                <div className='mb-8'>
-                  <h3 className='text-2xl font-bold text-foreground mb-1'>
-                    Send a Message
-                  </h3>
-                  <p className='text-muted-foreground text-sm'>
-                    Fill in the form and we&apos;ll get back to you shortly.
-                  </p>
-                </div>
-
-                <form className='space-y-5'>
-                  <div className='grid md:grid-cols-2 gap-5'>
-                    <div className='space-y-1.5'>
-                      <label className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
-                        Full Name
-                      </label>
-                      <input
-                        type='text'
-                        placeholder='Jane Smith'
-                        className='w-full px-4 py-3 rounded-xl bg-background/80 border border-border focus:border-primary/60 focus:ring-4 focus:ring-primary/8 outline-none transition-all text-sm'
-                      />
-                    </div>
-                    <div className='space-y-1.5'>
-                      <label className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
-                        Email Address
-                      </label>
-                      <input
-                        type='email'
-                        placeholder='jane@company.com'
-                        className='w-full px-4 py-3 rounded-xl bg-background/80 border border-border focus:border-primary/60 focus:ring-4 focus:ring-primary/8 outline-none transition-all text-sm'
-                      />
-                    </div>
-                  </div>
-
-                  <div className='space-y-1.5'>
-                    <label className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
-                      Subject
-                    </label>
-                    <input
-                      type='text'
-                      placeholder='How can we help you?'
-                      className='w-full px-4 py-3 rounded-xl bg-background/80 border border-border focus:border-primary/60 focus:ring-4 focus:ring-primary/8 outline-none transition-all text-sm'
-                    />
-                  </div>
-
-                  <div className='space-y-1.5'>
-                    <label className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
-                      Message
-                    </label>
-                    <textarea
-                      placeholder='Tell us about your project or enquiry...'
-                      rows={4}
-                      className='w-full px-4 py-3 rounded-xl bg-background/80 border border-border focus:border-primary/60 focus:ring-4 focus:ring-primary/8 outline-none transition-all resize-none text-sm'
-                    />
-                  </div>
-
-                  <button
-                    type='submit'
-                    className='w-full flex items-center justify-center gap-2.5 h-13 py-3.5 rounded-xl bg-primary text-white font-bold text-base shadow-xl shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] transition-all duration-300 group'
-                  >
-                    Send Message
-                    <Send className='w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform' />
-                  </button>
-
-                  <p className='text-center text-xs text-muted-foreground/50'>
-                    By submitting, you agree to our privacy policy.
-                  </p>
-                </form>
-              </div>
+            <div className='relative'>
+              <div className='absolute -inset-1 bg-linear-to-r from-primary/20 to-primary/20 rounded-[2.5rem] blur-2xl opacity-50' />
+              <ContactForm />
             </div>
           </div>
         </div>

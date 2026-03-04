@@ -10,9 +10,9 @@ const stats = [
     glow: 'from-primary/20',
   },
   {
-    value: '50+',
-    label: 'Global Clients',
-    description: 'Across 20+ countries worldwide',
+    value: '20+',
+    label: 'Events Organised',
+    description: 'Across 10+ countries worldwide',
     icon: Globe,
     color: 'text-sky-400',
     glow: 'from-sky-400/20',
@@ -54,17 +54,14 @@ const stats = [
 const Stats = () => {
   return (
     <section
-      className='py-20 relative overflow-hidden'
+      className='relative overflow-hidden'
       id='stats'
       style={{
         background:
           'linear-gradient(135deg, oklch(0.12 0.05 280) 0%, oklch(0.14 0.06 260) 40%, oklch(0.11 0.04 300) 100%)',
       }}
     >
-      {/* Background decorations */}
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,oklch(0.5_0.2_283/0.15)_0%,transparent_60%)]' />
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,oklch(0.6_0.1_150/0.1)_0%,transparent_60%)]' />
-      <div className='absolute inset-0 opacity-10'>
+      <div className='absolute inset-0 opacity-5'>
         <svg
           className='absolute inset-0 w-full h-full'
           xmlns='http://www.w3.org/2000/svg'
@@ -88,9 +85,9 @@ const Stats = () => {
         </svg>
       </div>
 
-      <div className='container mx-auto px-4 md:px-0 relative z-10'>
+      <div className='max-container padding-container-sm relative z-10'>
         {/* Header */}
-        <div className='text-center mb-16 space-y-4'>
+        <div className='text-center mb-12 space-y-4'>
           <div className='inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white text-xs font-black tracking-[0.2em] uppercase mb-4'>
             Our Impact
           </div>
@@ -100,7 +97,7 @@ const Stats = () => {
               Define Us
             </span>
           </h2>
-          <p className='text-white/60 max-w-xl mx-auto text-lg font-light'>
+          <p className='text-white/60 max-w-2xl mx-auto text-lg font-light'>
             A decade of excellence, measured in milestones and meaningful
             outcomes.
           </p>
@@ -113,25 +110,21 @@ const Stats = () => {
               key={stat.label}
               className='group relative p-6 md:p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-white/25 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden'
             >
-              {/* Glow */}
               <div
                 className={`absolute inset-0 bg-linear-to-br ${stat.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
               />
 
               <div className='relative z-10 space-y-4'>
-                {/* Icon */}
                 <div className='w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
                   <stat.icon className={`w-6 h-6 ${stat.color}`} />
                 </div>
 
-                {/* Value */}
                 <div
                   className={`text-4xl md:text-5xl font-black ${stat.color} leading-none`}
                 >
                   {stat.value}
                 </div>
 
-                {/* Label & Description */}
                 <div>
                   <div className='text-white font-bold text-base md:text-lg'>
                     {stat.label}
@@ -142,7 +135,6 @@ const Stats = () => {
                 </div>
               </div>
 
-              {/* Decorative number backdrop */}
               <div
                 className={`absolute -bottom-4 -right-2 text-8xl font-black ${stat.color} opacity-5 pointer-events-none select-none`}
               >

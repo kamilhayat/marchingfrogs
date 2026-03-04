@@ -2,24 +2,16 @@ import { VERTICALS } from '@/constants';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { GridPattern } from '@/components/sections/svg';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const Verticals = () => {
   return (
-    <section
-      className='py-20 relative overflow-hidden'
-      id='verticals'
-      style={{
-        background:
-          'linear-gradient(145deg, oklch(0.96 0.025 150) 0%, oklch(0.97 0.02 180) 50%, oklch(0.95 0.02 120) 100%)',
-      }}
-    >
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.8_0.1_150/0.12)_0%,transparent_60%)]' />
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,oklch(0.7_0.1_200/0.08)_0%,transparent_60%)]' />
+    <section className='relative overflow-hidden' id='verticals'>
       <GridPattern />
 
-      <div className='container mx-auto px-4 md:px-0 relative z-10'>
+      <div className='max-container padding-container-sm relative z-10'>
         {/* Header Section */}
-        <div className='max-w-4xl mb-12'>
+        <div className='mb-12'>
           <div className='section-subtitle'>Our Business Engines</div>
           <h2 className='section-title font-sans font-bold text-foreground leading-tight tracking-tight mb-4'>
             Focused{' '}
@@ -36,14 +28,17 @@ const Verticals = () => {
         {/* Verticals Grid */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {VERTICALS.map((vertical) => (
-            <div
+            <Link
               key={vertical.title}
-              className='group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-700 hover:shadow-2xl overflow-hidden'
+              href={vertical.link}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='group relative p-6 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-700 hover:shadow-2xl overflow-hidden'
             >
               {/* Background Decor */}
               <div className='absolute -top-20 -right-20 w-80 h-80 rounded-full blur-[100px] bg-primary/10 transition-all duration-700' />
 
-              <div className='relative z-10 space-y-6'>
+              <div className='relative z-10 space-y-4'>
                 <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6'>
                   <div
                     className={cn(
@@ -59,16 +54,16 @@ const Verticals = () => {
                 </div>
 
                 <div className='space-y-4'>
-                  <h3 className='text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300'>
+                  <h3 className='text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300'>
                     {vertical.title}
                   </h3>
-                  <p className='text-base md:text-lg text-muted-foreground leading-relaxed font-light group-hover:text-muted-foreground transition-colors duration-500'>
+                  <p className='text-base text-muted-foreground leading-relaxed font-light group-hover:text-muted-foreground transition-colors duration-500'>
                     {vertical.description}
                   </p>
                 </div>
 
                 <div className='pt-4'>
-                  <div className='inline-flex items-center gap-2 text-sm font-bold text-muted-foreground/50 group-hover:text-foreground transition-all cursor-pointer border-b border-transparent group-hover:border-primary pb-1'>
+                  <div className='inline-flex items-center gap-2 text-sm font-bold text-muted-foreground/50 group-hover:text-foreground transition-all border-b border-transparent group-hover:border-primary pb-1'>
                     Learn More About This Vertical{' '}
                     <ExternalLink className='w-4 h-4' />
                   </div>
@@ -77,7 +72,7 @@ const Verticals = () => {
 
               {/* Vertical Indicator */}
               <div className='absolute top-0 right-12 h-24 w-px bg-linear-to-b from-primary/50 to-transparent' />
-            </div>
+            </Link>
           ))}
         </div>
       </div>

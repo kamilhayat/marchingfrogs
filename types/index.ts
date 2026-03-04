@@ -83,3 +83,16 @@ export interface FutureEventsProps {
   subheading?: string;
   showBuyPass?: boolean;
 }
+
+export interface ISendMailParams {
+  from?: string;
+  to: string | string[];
+  subject: string;
+  text: string;
+  html: string;
+  attachments?: Array<{
+    filename: string;
+    content: Buffer | string | any;
+    encoding?: string;
+  }>;
+}

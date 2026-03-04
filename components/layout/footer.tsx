@@ -1,12 +1,17 @@
 import Link from 'next/link';
 import { Mail, Phone, MapPin, ArrowUpRight, Globe } from 'lucide-react';
 import { CONTACT_DATA, NAV_LINKS } from '@/constants';
+import Image from 'next/image';
 
 const verticals = [
-  { label: 'Bespoke Global Legal Summits', href: '/verticals/bgls' },
-  { label: 'Patent Drawing Hub', href: '/verticals/patent-drawing-hub' },
+  {
+    label: 'Bespoke Global Legal Summits',
+    href: 'https://www.bespokegls.com/',
+  },
+  { label: 'Patent Drawing Hub', href: 'https://www.patentdrawinghub.com/' },
   { label: 'MICE Management', href: '/verticals/mice' },
   { label: 'Outsourcing & Tech Services', href: '/verticals/outsourcing-tech' },
+  { label: 'Digital Studio & Web Development', href: '/verticals/web-dev' },
 ];
 
 const services = [
@@ -42,17 +47,7 @@ const Footer = () => {
           <div className='lg:col-span-1 space-y-6'>
             {/* Logo */}
             <div className='flex items-center gap-3'>
-              <div className='w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-black text-lg shadow-lg shadow-primary/30'>
-                M
-              </div>
-              <div>
-                <span className='font-serif text-xl font-bold text-white tracking-tight'>
-                  Marching<span className='text-primary'>Frogs</span>
-                </span>
-                <div className='text-[10px] text-white/30 font-bold uppercase tracking-[0.2em]'>
-                  PVT LTD
-                </div>
-              </div>
+              <Image src='/logo.png' alt='Logo' width={160} height={100} />
             </div>
 
             {/* Tagline */}
@@ -60,12 +55,6 @@ const Footer = () => {
               A global, multi-disciplinary enterprise driven by a client-first
               philosophy — your strategic partner in excellence.
             </p>
-
-            {/* Est badge */}
-            <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/40 text-[10px] font-black tracking-[0.2em] uppercase'>
-              <Globe className='w-3 h-3 text-primary' />
-              Est. 2017 · Global Operations
-            </div>
 
             {/* Quote CTA */}
             <Link
@@ -175,18 +164,6 @@ const Footer = () => {
           <p className='text-white/25 text-xs'>
             © {year} Marching Frogs PVT LTD. All rights reserved.
           </p>
-
-          <div className='flex items-center gap-6'>
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.title}
-                href={link.href}
-                className='text-white/30 text-xs hover:text-white/60 transition-colors duration-300'
-              >
-                {link.title}
-              </Link>
-            ))}
-          </div>
 
           <div className='flex items-center gap-4'>
             <Link

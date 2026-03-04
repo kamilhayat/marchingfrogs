@@ -2,11 +2,12 @@ import { SERVICES } from '@/constants';
 import { ArrowUpRight, Target } from 'lucide-react';
 import { GridPattern } from '@/components/sections/svg';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const Services = () => {
   return (
     <section
-      className='py-20 relative overflow-hidden'
+      className='relative overflow-hidden'
       id='services'
       style={{
         background:
@@ -18,13 +19,13 @@ const Services = () => {
       <div className='bg-blob-primary top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10' />
       <GridPattern />
 
-      <div className='container mx-auto px-4 md:px-0 relative z-10'>
+      <div className='max-container padding-container-sm relative z-10'>
         {/* Header - High Impact */}
         <div className='max-w-4xl mb-12'>
           <div className='section-subtitle bg-white/10! border-white/20! text-white!'>
             Our Expertise
           </div>
-          <h2 className='section-title font-sans font-bold text-white leading-none tracking-tight mb-8'>
+          <h2 className='section-title text-white! mb-8'>
             Specialized Solutions for <br className='hidden md:flex' />
             <span className='text-primary italic font-serif'>
               IP &amp; Legal Professionals
@@ -38,14 +39,14 @@ const Services = () => {
           {SERVICES.map((service, index) => (
             <div
               key={service.title}
-              className='group relative p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/40 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-3 overflow-hidden'
+              className='group relative p-4 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/40 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-3 overflow-hidden'
             >
               {/* Background Glow */}
               <div className='absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all duration-700' />
 
               <div className='relative z-10 h-full flex flex-col'>
                 {/* Icon Wrapper */}
-                <div className='mb-10 relative'>
+                <div className='mb-6 relative'>
                   <div className='absolute inset-0 bg-primary/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700' />
                   <div
                     className={cn(
@@ -57,7 +58,7 @@ const Services = () => {
                   </div>
                 </div>
 
-                <div className='space-y-4 grow'>
+                <div className='space-y-3 grow'>
                   <h4 className='text-xl font-bold text-white group-hover:text-primary transition-colors duration-300 tracking-tight'>
                     {service.title}
                   </h4>
@@ -97,9 +98,11 @@ const Services = () => {
               <p className='text-white/60'>
                 Unlock potential with our multi-disciplinary expert team.
               </p>
-              <button className='px-8 py-3 bg-primary text-white rounded-full font-bold text-sm hover:scale-105 transition-transform shadow-lg shadow-primary/30'>
-                Consult Our Experts
-              </button>
+              <Link href='/request-quote'>
+                <button className='px-8 py-3 bg-primary text-white rounded-full font-bold text-sm hover:scale-105 transition-transform shadow-lg shadow-primary/30 cursor-pointer'>
+                  Consult Our Experts
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,23 +1,21 @@
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import {
+  CheckCircle2,
+  ArrowRight,
+  Users,
+  Zap,
+  Globe,
+  Heart,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ABOUT_CONTENT } from '@/constants';
 import { GridPattern } from '@/components/sections/svg';
 
 const About = () => {
   return (
-    <section
-      className='py-20 relative overflow-hidden'
-      id='about'
-      style={{
-        background:
-          'linear-gradient(135deg, oklch(0.96 0.02 280) 0%, oklch(0.98 0.01 200) 50%, oklch(0.97 0.015 120) 100%)',
-      }}
-    >
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_oklch(0.88_0.06_280/0.15)_0%,_transparent_60%)]' />
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_oklch(0.88_0.05_150/0.12)_0%,_transparent_60%)]' />
+    <section className='relative overflow-hidden' id='about'>
       <GridPattern />
 
-      <div className='container mx-auto px-4 md:px-0 relative z-10'>
+      <div className='max-container padding-container-sm relative z-10'>
         {/* Centered Header Section */}
         <div className='max-w-4xl mx-auto text-center mb-12 space-y-4'>
           <div className='section-subtitle mx-auto'>{ABOUT_CONTENT.badge}</div>
@@ -45,37 +43,78 @@ const About = () => {
             </div>
 
             <div className='grid sm:grid-cols-2 gap-4 lg:gap-6 pt-6'>
-              {ABOUT_CONTENT.features.map((feature) => (
-                <div
-                  key={feature}
-                  className='flex items-center gap-4 p-5 rounded-3xl bg-card border border-border hover:border-primary/30 transition-all duration-500 group animate-in fade-in slide-in-from-bottom-2'
-                >
-                  <div className='w-10 h-10 rounded-2xl bg-secondary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shrink-0'>
-                    <CheckCircle2 className='w-5 h-5' />
+              {ABOUT_CONTENT.features.map((feature, index) => {
+                const styles = [
+                  {
+                    color: 'text-indigo-500',
+                    bg: 'bg-indigo-500/10',
+                    border: 'hover:border-indigo-500/30',
+                    hoverBg: 'group-hover:bg-indigo-500',
+                    icon: Users,
+                  },
+                  {
+                    color: 'text-primary',
+                    bg: 'bg-primary/10',
+                    border: 'hover:border-primary/30',
+                    hoverBg: 'group-hover:bg-primary',
+                    icon: Zap,
+                  },
+                  {
+                    color: 'text-emerald-500',
+                    bg: 'bg-emerald-500/10',
+                    border: 'hover:border-emerald-500/30',
+                    hoverBg: 'group-hover:bg-emerald-500',
+                    icon: Globe,
+                  },
+                  {
+                    color: 'text-amber-500',
+                    bg: 'bg-amber-500/10',
+                    border: 'hover:border-amber-500/30',
+                    hoverBg: 'group-hover:bg-amber-500',
+                    icon: Heart,
+                  },
+                ][index % 4];
+
+                const Icon = styles.icon;
+
+                return (
+                  <div
+                    key={feature}
+                    className={cn(
+                      'flex items-center gap-4 p-5 rounded-3xl bg-card border border-border transition-all duration-500 group animate-in fade-in slide-in-from-bottom-2',
+                      styles.border,
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        'w-10 h-10 rounded-2xl flex items-center justify-center transition-all duration-500 shrink-0',
+                        styles.bg,
+                        styles.color,
+                        'group-hover:text-white',
+                        styles.hoverBg,
+                      )}
+                    >
+                      <Icon className='w-5 h-5' />
+                    </div>
+                    <span className='font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-300'>
+                      {feature}
+                    </span>
                   </div>
-                  <span className='font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-300'>
-                    {feature}
-                  </span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
           {/* Impact Visual - Integrated Approach */}
           <div className='relative'>
-            {/* Decorative Background Aura */}
             <div className='absolute inset-0 bg-primary/5 blur-[120px] rounded-full animate-pulse' />
 
             <div className='relative p-8 md:p-12 rounded-3xl bg-card border border-border shadow-2xl overflow-hidden group'>
-              {/* Floating Elements */}
               <div className='absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-1000' />
               <div className='absolute -bottom-10 -left-10 w-40 h-40 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-1000' />
 
               <div className='relative z-10 space-y-10'>
                 <div className='space-y-6'>
-                  {/* <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border text-[10px] font-black uppercase tracking-[0.4em] text-primary'>
-                    The Methodology
-                  </div> */}
                   <h4 className='text-2xl md:text-4xl font-serif font-bold text-foreground leading-tight'>
                     {ABOUT_CONTENT.integratedApproach.title}
                   </h4>

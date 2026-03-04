@@ -18,6 +18,7 @@ import {
   MessageSquare,
   Recycle,
   ArrowUpRight,
+  Monitor,
 } from 'lucide-react';
 import {
   Vertical,
@@ -87,7 +88,7 @@ export const VERTICALS: Vertical[] = [
       'Our flagship platform hosting high-level conferences in Dubai, Malaysia, India, and other global hubs for partners, counsel, and tech leaders.',
     icon: Scale,
     color: 'bg-indigo-500/15 text-indigo-500',
-    link: '/verticals/bgls',
+    link: 'https://www.bespokegls.com/',
   },
   {
     title: 'Patent Drawing Hub',
@@ -95,7 +96,7 @@ export const VERTICALS: Vertical[] = [
       'Technical illustrations, prior art support, and research-driven documentation ensuring precision and compliance for IP professionals globally.',
     icon: PenTool,
     color: 'bg-primary/15 text-primary',
-    link: '/verticals/patent-drawing-hub',
+    link: 'https://www.patentdrawinghub.com/',
   },
   {
     title: 'MICE Management',
@@ -113,6 +114,14 @@ export const VERTICALS: Vertical[] = [
     color: 'bg-amber-500/15 text-amber-500',
     link: '/verticals/outsourcing-tech',
   },
+  {
+    title: 'Digital Studio & Web Development',
+    description:
+      'High-performance website design, custom software development, and UI/UX solutions tailored for modern enterprises.',
+    icon: Monitor,
+    color: 'bg-blue-500/15 text-blue-500',
+    link: '/verticals/web-dev',
+  },
 ];
 
 export const ABOUT_CONTENT: AboutContent = {
@@ -123,7 +132,7 @@ export const ABOUT_CONTENT: AboutContent = {
   },
   descriptions: [
     'Marching Frogs is a global, multi-disciplinary enterprise driven by a client-first philosophy and a commitment to delivering solutions that go beyond conventional service models. We place our clients at the centre of everything we do—working as strategic partners rather than service providers.',
-    'As a parent company, Marching Frogs oversees and operates multiple specialised verticals, including global conference platforms, patent illustration hubs, MICE management, and technology-enabled business services.',
+    'As a parent company, Marching Frogs oversees and operates multiple specialised verticals, including global conference platforms, patent illustration hubs, MICE management, and digital transformation studios.',
   ],
   features: [
     'Strategic Partnership Model',
@@ -262,7 +271,7 @@ export const events: EventCard[] = [
     date: '24-25 September, 2025',
     location: 'Park Regis Kris Kin',
     area: 'Dubai, UAE',
-    image: '/events/dubai-event.jpeg',
+    image: '/events/1770402900977-21j28v95-dubai-event-2026.webp',
     description:
       'Successfully concluded! Join us for future editions of this premier legal Conference.',
     href: '/events/dubai-event',
@@ -273,7 +282,7 @@ export const events: EventCard[] = [
     date: '13 November, 2025',
     location: 'Pride Plaza Aerocity, Delhi',
     area: 'Delhi, India',
-    image: '/events/delhi.png',
+    image: '/events/1769195655010-5k53gqeb-delhi.webp',
     description:
       'Explore emerging technologies and leadership strategies in the digital era.',
     href: '/events/delhi-event',
@@ -284,7 +293,7 @@ export const events: EventCard[] = [
     date: '14 January, 2026',
     location: 'AC, HOTEL BY MARRIOTT KUALA LUMPUR, MALAYSIA',
     area: 'Malaysia',
-    image: '/events/malaysia-event-new.jpeg',
+    image: '/events/1769195634563-b0toy67i-malaysia-event-new.webp',
     description:
       'Discover how artificial intelligence is transforming industries and creating new opportunities.',
     href: '/events/malaysia-event',
@@ -295,7 +304,7 @@ export const events: EventCard[] = [
     date: '30-31 March, 2026',
     location: 'Millennium Plaza Downtown Hotel, Dubai',
     area: 'Dubai, UAE',
-    image: '/events/dubai-event-2026.jpeg',
+    image: '/events/1770402900977-21j28v95-dubai-event-2026.webp',
     description:
       'Advancing excellence in legal practice and IP management, featuring discussions on legal technologies and cross-border dispute resolution.',
     href: '/events/dubai-legal-IP-event',
@@ -306,7 +315,7 @@ export const events: EventCard[] = [
     date: '20 May, 2026',
     location: 'TBA',
     area: 'Mumbai, India',
-    image: '/events/mumbai-event.jpeg',
+    image: '/events/1769195712820-kdnlhfrg-mumbai-event.webp',
     description:
       'Join us for an exclusive legal Conference on Litigation, AI and Legal Tech with industry experts and networking opportunities.',
     href: '/events/mumbai-litigation-ai-legal-tech',
@@ -317,7 +326,51 @@ export const events: EventCard[] = [
     date: '13 May, 2026',
     location: 'TBA',
     area: 'Bangalore, India',
-    image: '/events/bangalore.jpeg',
+    image: '/events/1769195699089-x8tbzdxo-bangalore.webp',
+    description:
+      'Join us for an exclusive legal Conference on Litigation, AI and Legal Tech with industry experts and networking opportunities.',
+    href: '',
+  },
+  {
+    id: '7',
+    title: 'BGLS 2026 ADR SUMMIT DELHI',
+    date: '15 July, 2026',
+    location: 'TBA',
+    area: 'Delhi, India',
+    image: '/events/1769195587325-wdu8qf05-WhatsApp-Image-2026-01-22-at-6.webp',
+    description:
+      'Join us for an exclusive legal Conference on Litigation, AI and Legal Tech with industry experts and networking opportunities.',
+    href: '',
+  },
+  {
+    id: '8',
+    title: 'BGLS 2026 RIYADH',
+    date: '10-11 December, 2026',
+    location: 'TBA',
+    area: 'Riyadh, Saudi Arabia',
+    image: '/events/1769195571008-u76bf4rf-WhatsApp-Image-2026-01-22-at-6.webp',
+    description:
+      'Join us for an exclusive legal Conference on Litigation, AI and Legal Tech with industry experts and networking opportunities.',
+    href: '',
+  },
+  {
+    id: '9',
+    title: 'BGLS 2026 BANGKOK',
+    date: '16-17 September, 2026',
+    location: 'TBA',
+    area: 'Bangkok, Thailand',
+    image: '/events/1769195554427-rx9s1ffn-WhatsApp-Image-2026-01-22-at-6.webp',
+    description:
+      'Join us for an exclusive legal Conference on Litigation, AI and Legal Tech with industry experts and networking opportunities.',
+    href: '',
+  },
+  {
+    id: '10',
+    title: 'BGLS 2026 DELHI',
+    date: '26 November, 2026',
+    location: 'TBA',
+    area: 'Delhi, India',
+    image: '/events/1769196462819-gkqbhr7u-delhi.webp',
     description:
       'Join us for an exclusive legal Conference on Litigation, AI and Legal Tech with industry experts and networking opportunities.',
     href: '',

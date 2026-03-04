@@ -61,10 +61,10 @@ const Navbar = () => {
               <div
                 className={cn(
                   'absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0',
-                  'w-[400px]',
+                  'w-[640px]',
                 )}
               >
-                <div className='bg-card/95 backdrop-blur-xl border border-border rounded-3xl shadow-2xl overflow-hidden p-3 grid grid-cols-1 gap-1'>
+                <div className='bg-card/95 backdrop-blur-xl border border-border rounded-3xl shadow-2xl overflow-hidden p-3 grid grid-cols-2 gap-1'>
                   {link.items.map((item) => (
                     <Link
                       key={item.title}

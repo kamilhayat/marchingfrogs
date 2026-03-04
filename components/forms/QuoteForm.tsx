@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm, SubmitHandler, Resolver } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { submitQuote } from '@/app/actions/quote';
+import { submitQuote } from '@/server/actions/quote';
 import { Button } from '@/components/ui/button';
 import {
   Form,
