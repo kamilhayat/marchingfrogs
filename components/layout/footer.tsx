@@ -47,7 +47,12 @@ const Footer = () => {
           <div className='lg:col-span-1 space-y-6'>
             {/* Logo */}
             <div className='flex items-center gap-3'>
-              <Image src='/logo.png' alt='Logo' width={160} height={100} />
+              <Image
+                src='/logo.png'
+                alt='Marching Frogs Logo'
+                width={160}
+                height={100}
+              />
             </div>
 
             {/* Tagline */}

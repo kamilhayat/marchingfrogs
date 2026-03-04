@@ -43,7 +43,7 @@ type FormValues = {
   referredBy: string;
 };
 
-const projectTypes = [
+const defaultProjectTypes = [
   'Prior Art Search',
   'Freedom to Operate (FTO) Search',
   'Patentability Search',
@@ -52,8 +52,13 @@ const projectTypes = [
   'Other',
 ];
 
-export function QuoteForm() {
+interface QuoteFormProps {
+  customProjectTypes?: string[];
+}
+
+export function QuoteForm({ customProjectTypes }: QuoteFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const types = customProjectTypes || defaultProjectTypes;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema) as any,
@@ -89,114 +94,128 @@ export function QuoteForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='space-y-6 bg-zinc-900/50 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl'
+        className='space-y-6 bg-white/80 backdrop-blur-xl p-8 rounded-[2.5rem] border border-primary/10 shadow-2xl shadow-primary/5'
       >
-        <div className='space-y-2 text-white'>
-          <h2 className='text-2xl font-bold tracking-tight'>Request a Quote</h2>
-          <p className='text-zinc-400 text-sm'>
-            Fill out the form below and we'll get back to you shortly.
+        <div className='space-y-1'>
+          <h2 className='text-2xl font-bold tracking-tight text-foreground'>
+            Request a Quote
+          </h2>
+          <p className='text-muted-foreground text-sm'>
+            Fill out the form below and we&apos;ll get back to you shortly.
           </p>
         </div>
 
-        <FormField
-          control={form.control}
-          name='name'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className='text-zinc-300'>Full Name</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder='John Doe'
-                  {...field}
-                  className='bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-500'
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className='grid md:grid-cols-2 gap-5'>
+          <FormField
+            control={form.control}
+            name='name'
+            render={({ field }) => (
+              <FormItem className='space-y-1.5'>
+                <FormLabel className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
+                  Full Name
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder='John Doe'
+                    {...field}
+                    className='bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 h-12 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all shadow-sm'
+                  />
+                </FormControl>
+                <FormMessage className='text-[10px]' />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name='email'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className='text-zinc-300'>Email Address</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder='john@example.com'
-                  {...field}
-                  className='bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-500'
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name='email'
+            render={({ field }) => (
+              <FormItem className='space-y-1.5'>
+                <FormLabel className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
+                  Email Address
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder='john@example.com'
+                    {...field}
+                    className='bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 h-12 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all shadow-sm'
+                  />
+                </FormControl>
+                <FormMessage className='text-[10px]' />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <FormField
           control={form.control}
           name='projectType'
           render={({ field }) => (
-            <FormItem>
-              <FormLabel className='text-zinc-300'>Project Type</FormLabel>
+            <FormItem className='space-y-1.5'>
+              <FormLabel className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
+                Project Type
+              </FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger className='bg-zinc-800/50 border-white/10 text-white'>
+                  <SelectTrigger className='bg-white border-slate-200 text-slate-900 h-12 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all shadow-sm'>
                     <SelectValue placeholder='Select a project type' />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent className='bg-zinc-900 border-white/10 text-white'>
-                  {projectTypes.map((type) => (
+                <SelectContent className='bg-white border-slate-200 text-slate-900 rounded-xl shadow-2xl'>
+                  {types.map((type) => (
                     <SelectItem
                       key={type}
                       value={type}
-                      className='hover:bg-zinc-800 focus:bg-zinc-800'
+                      className='hover:bg-slate-50 focus:bg-slate-50 cursor-pointer'
                     >
                       {type}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className='text-[10px]' />
             </FormItem>
           )}
         />
 
-        <FormField
-          control={form.control}
-          name='relevantPatents'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className='text-zinc-300'>Relevant Patents</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder='e.g. US1234567, EP9876543'
-                  {...field}
-                  className='bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-500'
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {(!customProjectTypes || customProjectTypes.length === 0) && (
+          <FormField
+            control={form.control}
+            name='relevantPatents'
+            render={({ field }) => (
+              <FormItem className='space-y-1.5'>
+                <FormLabel className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
+                  Relevant Patents
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder='e.g. US1234567, EP9876543'
+                    {...field}
+                    className='bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 h-12 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all shadow-sm'
+                  />
+                </FormControl>
+                <FormMessage className='text-[10px]' />
+              </FormItem>
+            )}
+          />
+        )}
 
         <FormField
           control={form.control}
           name='additionalDetails'
           render={({ field }) => (
-            <FormItem>
-              <FormLabel className='text-zinc-300'>
+            <FormItem className='space-y-1.5'>
+              <FormLabel className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
                 Additional Project Details
               </FormLabel>
               <FormControl>
                 <Textarea
                   placeholder='Describe your project requirements...'
                   {...field}
-                  className='bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-500 min-h-[100px]'
+                  className='bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all min-h-[100px] shadow-sm resize-none'
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className='text-[10px]' />
             </FormItem>
           )}
         />
@@ -205,27 +224,35 @@ export function QuoteForm() {
           control={form.control}
           name='referredBy'
           render={({ field }) => (
-            <FormItem>
-              <FormLabel className='text-zinc-300'>Referred By</FormLabel>
+            <FormItem className='space-y-1.5'>
+              <FormLabel className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
+                Referred By
+              </FormLabel>
               <FormControl>
                 <Input
                   placeholder='How did you hear about us?'
                   {...field}
-                  className='bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-500'
+                  className='bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 h-12 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all shadow-sm'
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className='text-[10px]' />
             </FormItem>
           )}
         />
 
-        <Button
-          type='submit'
-          className='w-full rounded-xl py-6 text-lg font-semibold bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20'
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Submitting...' : 'Submit Request'}
-        </Button>
+        <div className='pt-2'>
+          <Button
+            type='submit'
+            className='w-full rounded-xl py-6 text-base font-bold bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20 flex items-center justify-center gap-2 group transition-all active:scale-95'
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit Request'}
+          </Button>
+        </div>
+
+        <p className='text-center text-[10px] text-muted-foreground/60 uppercase tracking-widest font-bold'>
+          Secure & Confidential · Industry standard NDAs
+        </p>
       </form>
     </Form>
   );

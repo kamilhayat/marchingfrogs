@@ -31,8 +31,8 @@ const Hero = () => {
           </div>
 
           {/* Badge */}
-          <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/30 border border-primary/50 text-primary-foreground text-sm font-medium animate-in fade-in slide-in-from-bottom-4 duration-500'>
-            <Globe className='w-4 h-4 text-primary animate-pulse' />
+          <div className='section-subtitle mb-6! animate-in fade-in slide-in-from-bottom-4 duration-500'>
+            <Globe className='w-3.5 h-3.5' />
             Global Multi-Disciplinary Enterprise
           </div>
 
