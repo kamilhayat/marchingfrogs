@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function sendMail({
-  from = '"Marching Frogs" <info@marchingfrogs.com>',
+  from = `"Marching Frogs" <${process.env.MAIL_USER}>`,
   to,
   subject,
   text,
