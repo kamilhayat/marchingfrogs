@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm, SubmitHandler, Resolver } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -57,6 +58,7 @@ interface QuoteFormProps {
 }
 
 export function QuoteForm({ customProjectTypes }: QuoteFormProps) {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const types = customProjectTypes || defaultProjectTypes;
 
@@ -80,6 +82,7 @@ export function QuoteForm({ customProjectTypes }: QuoteFormProps) {
       if (result.success) {
         toast.success(result.message);
         form.reset();
+        router.push('/thank-you');
       } else {
         toast.error(result.message);
       }
