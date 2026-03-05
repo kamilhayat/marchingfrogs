@@ -9,14 +9,14 @@ import {
 const Values = () => {
   return (
     <section
-      className='py-8 bg-[#050505] dark text-white relative overflow-hidden'
+      className=' bg-[#050505] dark text-white relative overflow-hidden'
       id='values'
     >
       <FloatingOrbs />
       <GridPattern />
       <Particles />
 
-      <div className='container mx-auto px-4 md:px-0  relative z-10'>
+      <div className='max-container padding-container-sm relative z-10'>
         {/* Headline Section - Improved spacing and typography */}
         <div className='max-w-4xl mb-8'>
           <div className='section-subtitle bg-white/5! border-white/10! text-white!'>

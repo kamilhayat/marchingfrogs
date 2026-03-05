@@ -41,7 +41,7 @@ const Footer = () => {
       <div className='h-px bg-linear-to-r from-transparent via-primary/40 to-transparent' />
 
       {/* Main footer content */}
-      <div className='container mx-auto px-4 md:px-0 pt-16 pb-10 relative z-10'>
+      <div className='max-container padding-container-sm relative z-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12'>
           {/* Brand column */}
           <div className='lg:col-span-1 space-y-6'>
