@@ -29,19 +29,21 @@ import { toast } from 'sonner';
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
+  phone: z.string().optional(),
+  companyName: z.string().optional(),
   projectType: z.string().min(1, 'Please select a project type'),
-  relevantPatents: z.string(),
-  additionalDetails: z.string(),
-  referredBy: z.string(),
+  relevantPatents: z.string().optional(),
+  additionalDetails: z.string().optional(),
 });
 
 type FormValues = {
   name: string;
   email: string;
+  phone: string;
+  companyName: string;
   projectType: string;
   relevantPatents: string;
   additionalDetails: string;
-  referredBy: string;
 };
 
 const defaultProjectTypes = [
@@ -67,10 +69,11 @@ export function QuoteForm({ customProjectTypes }: QuoteFormProps) {
     defaultValues: {
       name: '',
       email: '',
+      phone: '',
+      companyName: '',
       projectType: '',
       relevantPatents: '',
       additionalDetails: '',
-      referredBy: '',
     },
     mode: 'onChange',
   });
@@ -148,6 +151,46 @@ export function QuoteForm({ customProjectTypes }: QuoteFormProps) {
               </FormItem>
             )}
           />
+
+          <FormField
+            control={form.control}
+            name='phone'
+            render={({ field }) => (
+              <FormItem className='space-y-1.5'>
+                <FormLabel className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
+                  Phone Number
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder='+1 (555) 000-0000'
+                    {...field}
+                    className='bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 h-12 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all shadow-sm'
+                  />
+                </FormControl>
+                <FormMessage className='text-[10px]' />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name='companyName'
+            render={({ field }) => (
+              <FormItem className='space-y-1.5'>
+                <FormLabel className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
+                  Company Name
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder='Your Company'
+                    {...field}
+                    className='bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 h-12 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all shadow-sm'
+                  />
+                </FormControl>
+                <FormMessage className='text-[10px]' />
+              </FormItem>
+            )}
+          />
         </div>
 
         <FormField
@@ -169,7 +212,7 @@ export function QuoteForm({ customProjectTypes }: QuoteFormProps) {
                     <SelectItem
                       key={type}
                       value={type}
-                      className='hover:bg-slate-50 focus:bg-slate-50 cursor-pointer'
+                      className='hover:bg-primary focus:bg-primary hover:text-white focus:text-white cursor-pointer py-3 px-4 transition-colors'
                     >
                       {type}
                     </SelectItem>
@@ -223,25 +266,7 @@ export function QuoteForm({ customProjectTypes }: QuoteFormProps) {
           )}
         />
 
-        <FormField
-          control={form.control}
-          name='referredBy'
-          render={({ field }) => (
-            <FormItem className='space-y-1.5'>
-              <FormLabel className='text-xs font-black text-muted-foreground uppercase tracking-widest'>
-                Referred By
-              </FormLabel>
-              <FormControl>
-                <Input
-                  placeholder='How did you hear about us?'
-                  {...field}
-                  className='bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 h-12 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all shadow-sm'
-                />
-              </FormControl>
-              <FormMessage className='text-[10px]' />
-            </FormItem>
-          )}
-        />
+
 
         <div className='pt-2'>
           <Button

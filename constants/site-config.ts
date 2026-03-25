@@ -21,7 +21,7 @@ const SITE_CONFIG = {
       '216-A, Gautam Nagar Second Floor Above RGM Library, New Delhi - 110049, India',
     internationalAddress:
       'wasl district souq - D 08 - next to Hyatt Place - Deira - Dubai - UAE',
-    phone: '[+91 9711425481,+91 8920265640]',
+    phone: '[+91 9711425481, +91 8920265640]',
     internationalPhone: '[+971-44471565]',
     email: 'info@marchingfrogs.com',
     whatsapp: '+919711425481',

@@ -243,23 +243,19 @@ export const CONTACT_DATA = {
   description:
     "Have a project in mind or need expert advice? Reach out to us and let's explore how we can achieve excellence together.",
   email: 'info@marchingfrogs.com',
-  phone: '+91 123 456 7890',
+  phone: '+91 9711425481',
   address: 'Marching Frogs PVT LTD, Silicon Valley of India, Bangalore',
   locations: [
     {
-      city: 'Bangalore',
-      details: 'Corporate Headquarters, India',
+      city: 'New Delhi',
+      details:
+        '216-A, Gautam Nagar Second Floor Above RGM Library, - 110049, India',
       coordinates: [77.5946, 12.9716],
     },
     {
-      city: 'Dubai',
-      details: 'Strategic Hub, UAE',
+      city: 'Patna',
+      details: 'Head Office, Bihar',
       coordinates: [55.2708, 25.2048],
-    },
-    {
-      city: 'Malaysia',
-      details: 'Regional Office, SE Asia',
-      coordinates: [101.6869, 3.139],
     },
   ],
 };

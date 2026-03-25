@@ -27,8 +27,8 @@ const contactMethods = [
   {
     icon: MapPin,
     label: 'Our Offices',
-    value: 'Bangalore · Dubai · Malaysia',
-    sub: 'Three global hubs',
+    value: 'New Delhi & Patna',
+    sub: 'Two global hubs',
     color: 'from-amber-500 to-orange-500',
     bg: 'bg-amber-500/10',
     border: 'border-amber-500/20',

@@ -68,14 +68,14 @@ const Services = () => {
                 </div>
 
                 {/* Bottom Action */}
-                <div className='mt-6 pt-8 border-t border-border/50 flex items-center justify-between group-hover:border-primary/20 transition-colors'>
+                {/* <div className='mt-6 pt-8 border-t border-border/50 flex items-center justify-between group-hover:border-primary/20 transition-colors'>
                   <span className='text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground group-hover:text-primary transition-colors'>
                     Service Block {index + 1}
                   </span>
                   <div className='w-10 h-10 rounded-full bg-secondary/50 border border-border flex items-center justify-center text-muted-foreground group-hover:bg-primary group-hover:text-white group-hover:border-primary group-hover:scale-110 transition-all duration-300'>
                     <ArrowUpRight className='w-5 h-5' />
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Number Backdrop */}

@@ -8,11 +8,12 @@ import { sendMail } from '@/lib/send-email';
 const quoteSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
+  phone: z.string().optional(),
+  companyName: z.string().optional(),
   projectType: z.string().optional(),
   subject: z.string().optional(),
   relevantPatents: z.string().optional(),
   additionalDetails: z.string().optional(),
-  referredBy: z.string().optional(),
 });
 
 export async function submitQuote(formData: any) {
@@ -57,7 +58,7 @@ export async function submitQuote(formData: any) {
     await sendMail({
       to: 'info@bespokegls.com',
       subject: `New Lead: ${validatedData.name} - ${validatedData.projectType || 'General'}`,
-      text: `New Lead Received:\n\nName: ${validatedData.name}\nEmail: ${validatedData.email}\nType: ${validatedData.projectType}\nDetails: ${validatedData.additionalDetails}`,
+      text: `New Lead Received:\n\nName: ${validatedData.name}\nEmail: ${validatedData.email}\nPhone: ${validatedData.phone || 'N/A'}\nCompany: ${validatedData.companyName || 'N/A'}\nType: ${validatedData.projectType}\nDetails: ${validatedData.additionalDetails}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px; background-color: #f9f9f9;">
           <h2 style="color: #333;">New Lead Notification</h2>
@@ -72,6 +73,14 @@ export async function submitQuote(formData: any) {
                 <td style="padding: 8px 0; border-bottom: 1px solid #eee; color: #333;"><a href="mailto:${validatedData.email}">${validatedData.email}</a></td>
               </tr>
               <tr>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #666;">Phone:</td>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eee; color: #333;">${validatedData.phone || 'N/A'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #666;">Company:</td>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eee; color: #333;">${validatedData.companyName || 'N/A'}</td>
+              </tr>
+              <tr>
                 <td style="padding: 8px 0; border-bottom: 1px solid #eee; font-weight: bold; color: #666;">Project Type:</td>
                 <td style="padding: 8px 0; border-bottom: 1px solid #eee; color: #333;">${validatedData.projectType || validatedData.subject || 'N/A'}</td>
               </tr>
@@ -83,16 +92,6 @@ export async function submitQuote(formData: any) {
                 <td style="padding: 8px 0; font-weight: bold; color: #666; vertical-align: top;">Details:</td>
                 <td style="padding: 8px 0; color: #333; line-height: 1.5;">${validatedData.additionalDetails || 'No additional details provided.'}</td>
               </tr>
-              ${
-                validatedData.referredBy
-                  ? `
-              <tr>
-                <td style="padding: 8px 0; border-top: 1px solid #eee; font-weight: bold; color: #666;">Referred By:</td>
-                <td style="padding: 8px 0; border-top: 1px solid #eee; color: #333;">${validatedData.referredBy}</td>
-              </tr>
-              `
-                  : ''
-              }
             </table>
           </div>
           <p style="font-size: 12px; color: #999; text-align: center; margin-top: 20px;">

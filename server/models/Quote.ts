@@ -7,7 +7,8 @@ export interface IQuote extends Document {
   subject?: string;
   relevantPatents?: string;
   additionalDetails?: string;
-  referredBy?: string;
+  phone?: string;
+  companyName?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -20,7 +21,8 @@ const QuoteSchema: Schema = new Schema(
     subject: { type: String },
     relevantPatents: { type: String },
     additionalDetails: { type: String },
-    referredBy: { type: String },
+    phone: { type: String },
+    companyName: { type: String },
   },
   {
     timestamps: true,

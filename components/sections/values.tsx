@@ -161,13 +161,13 @@ const Values = () => {
                   </div>
 
                   {/* Badge */}
-                  <div className='pt-4 border-t border-white/10 group-hover:border-primary/20 transition-colors duration-500'>
+                  {/* <div className='pt-4 border-t border-white/10 group-hover:border-primary/20 transition-colors duration-500'>
                     <div className='flex items-center gap-2 text-[10px] md:text-xs font-bold tracking-[0.15em] text-white/20 group-hover:text-primary/70 transition-colors duration-500 uppercase'>
                       <span className='w-1 h-1 rounded-full bg-current' />
                       Pillar {index + 1}
                       <ArrowUpRight className='w-3 h-3 ml-auto group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300' />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
