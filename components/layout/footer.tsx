@@ -8,7 +8,7 @@ const verticals = [
     label: 'Bespoke Global Legal Summits',
     href: 'https://www.bespokegls.com/',
   },
-  { label: 'Patent Hub', href: '/verticals/patent-hub' },
+  { label: 'Patent Drawing Hub', href: '/verticals/patent-hub' },
   { label: 'IP and Research Support', href: '/#services' },
   { label: 'MICE Management', href: '/verticals/mice' },
   { label: 'Outsourcing & Tech Services', href: '/verticals/outsourcing-tech' },

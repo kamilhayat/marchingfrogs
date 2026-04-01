@@ -26,15 +26,17 @@ const Verticals = () => {
         </div>
 
         {/* Verticals Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-          {VERTICALS.map((vertical) => (
-            <Link
-              key={vertical.title}
-              href={vertical.link}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='group relative p-6 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-700 hover:shadow-2xl overflow-hidden'
-            >
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          {VERTICALS.map((vertical) => {
+            const isExternal = vertical.link.startsWith('http');
+            return (
+              <Link
+                key={vertical.title}
+                href={vertical.link}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+                className='group relative p-6 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-700 hover:shadow-2xl overflow-hidden'
+              >
               {/* Background Decor */}
               <div className='absolute -top-20 -right-20 w-80 h-80 rounded-full blur-[100px] bg-primary/10 transition-all duration-700' />
 
@@ -72,8 +74,9 @@ const Verticals = () => {
 
               {/* Vertical Indicator */}
               <div className='absolute top-0 right-12 h-24 w-px bg-linear-to-b from-primary/50 to-transparent' />
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

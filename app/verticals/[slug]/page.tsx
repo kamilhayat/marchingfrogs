@@ -6,6 +6,7 @@ import { VERTICAL_DETAILS } from '@/constants/data/verticals_details';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { DottedConstellation } from '@/components/sections/svg';
 
 export default function VerticalPage({
   params,
@@ -35,72 +36,115 @@ export default function VerticalPage({
   const activeBg = bgGradientMap[data.color as keyof typeof bgGradientMap];
 
   const featureColors = [
-    'text-rose-500 from-rose-500/20 to-rose-500/10 border-rose-500/20',
-    'text-violet-500 from-violet-500/20 to-violet-500/10 border-violet-500/20',
-    'text-sky-500 from-sky-500/20 to-sky-500/10 border-sky-500/20',
-    'text-amber-500 from-amber-500/20 to-amber-500/10 border-amber-500/10',
+    'text-white from-rose-400/40 to-rose-400/10 border-white/20',
+    'text-white from-violet-400/40 to-violet-400/10 border-white/20',
+    'text-white from-sky-400/40 to-sky-400/10 border-white/20',
+    'text-white from-amber-400/40 to-amber-400/10 border-white/20',
   ];
 
   const featureCardBgs = [
-    'bg-rose-50/50 border-rose-100/50 hover:bg-rose-50 hover:border-rose-200',
-    'bg-violet-50/50 border-violet-100/50 hover:bg-violet-50 hover:border-violet-200',
-    'bg-sky-50/50 border-sky-100/50 hover:bg-sky-50 hover:border-sky-200',
-    'bg-amber-50/50 border-amber-100/50 hover:bg-amber-50 hover:border-amber-200',
+    'bg-rose-900 border-white/5 hover:border-rose-500/30',
+    'bg-violet-900 border-white/5 hover:border-violet-500/30',
+    'bg-sky-900 border-white/5 hover:border-sky-500/30',
+    'bg-amber-900 border-white/5 hover:border-amber-500/30',
   ];
 
   return (
-    <main className='min-h-screen'>
+    <main className='min-h-screen pt-10'>
       {/* Hero Section */}
       <section
-        className='relative px-6 py-32  overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl shadow-primary/10'
+        className='relative px-6 py-20 overflow-hidden shadow-2xl shadow-primary/20'
         style={{
           background:
-            'linear-gradient(160deg, oklch(0.15 0.04 280) 0%, oklch(0.18 0.05 260) 50%, oklch(0.14 0.03 300) 100%)',
+            'linear-gradient(165deg, oklch(0.12 0.04 280) 0%, oklch(0.18 0.05 260) 40%, oklch(0.14 0.03 300) 100%)',
         }}
       >
+        {/* Decorative Elements */}
+        <div className='absolute inset-0 z-0 pointer-events-none'>
+          <DottedConstellation />
+        </div>
+
         <div
           className={cn(
-            'absolute inset-0 -z-10 blur-[140px] opacity-25',
+            'absolute inset-0 -z-10 blur-[150px] opacity-30',
             activeBg,
           )}
         />
 
-        <div className='max-w-6xl mx-auto'>
-          <div className='space-y-8 text-center lg:text-left'>
-            <div
-              className={cn(
-                'inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 text-xs font-black tracking-[0.2em] uppercase backdrop-blur-md shadow-sm',
-                activeColor,
-              )}
-            >
-              <data.icon className='w-4 h-4' />
-              Strategic Business Vertical
+        <div className='max-w-7xl mx-auto relative z-10'>
+          <div className='grid lg:grid-cols-2 gap-16 items-center'>
+            <div className='space-y-10 text-center lg:text-left'>
+              {/* Badge */}
+              <div
+                className={cn(
+                  'inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 border border-white/10 text-[10px] font-black tracking-[0.3em] uppercase backdrop-blur-xl shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-700',
+                  activeColor,
+                )}
+              >
+                <data.icon className='w-4 h-4' />
+                Business Vertical
+              </div>
+
+              {/* Heading */}
+              <h1 className='text-6xl lg:text-8xl font-serif font-bold text-white leading-[1.1] tracking-tight animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100'>
+                {(() => {
+                  const words = data.title.split(' ');
+                  const lastWord = words.pop();
+                  const mainPart = words.join(' ');
+                  return (
+                    <>
+                      {mainPart.split(' & ').map((part, i, arr) => (
+                        <span key={i}>
+                          {part}
+                          {i < arr.length - 1 && (
+                            <span className='text-primary italic animate-pulse'> & </span>
+                          )}
+                        </span>
+                      ))}{' '}
+                      <span className='text-primary italic block lg:inline-block hover:scale-105 transition-transform cursor-default'>
+                        {lastWord}
+                      </span>
+                    </>
+                  );
+                })()}
+              </h1>
+
+              {/* Tagline */}
+              <p className='text-xl lg:text-2xl text-white/60 font-light max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200'>
+                {data.tagline}
+              </p>
+
+              {/* Interactive Stamp for Mobile/Tablet in-line */}
+              <div className='lg:hidden flex justify-center pt-4'>
+                <div className='w-24 h-24 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex flex-col items-center justify-center text-white/40'>
+                  <div className='text-[8px] font-bold tracking-widest uppercase'>Vertical</div>
+                  <div className='text-xl font-bold font-serif text-primary italic'>MF</div>
+                  <div className='text-[8px] font-bold tracking-widest uppercase'>Core</div>
+                </div>
+              </div>
             </div>
 
-            <h1 className='text-5xl lg:text-7xl font-serif font-bold text-white leading-tight tracking-tight'>
-              {(() => {
-                const words = data.title.split(' ');
-                const lastWord = words.pop();
-                const mainPart = words.join(' ');
-                return (
-                  <>
-                    {mainPart.split(' & ').map((part, i, arr) => (
-                      <span key={i}>
-                        {part}
-                        {i < arr.length - 1 && (
-                          <span className='text-primary italic'> & </span>
-                        )}
-                      </span>
-                    ))}{' '}
-                    <span className='text-primary italic'>{lastWord}</span>
-                  </>
-                );
-              })()}
-            </h1>
+            {/* Visual Column / Experience Stamp Desktop */}
+            <div className='hidden lg:flex justify-end relative'>
+              <div className='relative w-80 h-80 animate-in zoom-in fade-in duration-1000 delay-300'>
+                {/* Rotating Rings */}
+                <div className='absolute inset-0 rounded-full border-2 border-white/5 animate-[spin_20s_linear_infinite]' />
+                <div className='absolute inset-4 rounded-full border border-primary/20 animate-[spin_15s_linear_infinite_reverse]' />
 
-            <p className='text-xl lg:text-2xl text-white/60 font-light max-w-3xl mx-auto lg:mx-0 leading-relaxed shadow-sm'>
-              {data.tagline}
-            </p>
+                {/* Main Content Card */}
+                <div className='absolute inset-10 rounded-full bg-linear-to-br from-white/10 to-transparent backdrop-blur-2xl border border-white/20 flex flex-col items-center justify-center text-center shadow-3xl shadow-primary/20 hover:scale-110 transition-transform duration-700 group cursor-default'>
+                  <div className='text-xs font-black tracking-[0.4em] text-primary uppercase mb-2 group-hover:tracking-[0.6em] transition-all'>EST. 2018</div>
+                  <div className='text-6xl font-serif font-bold text-white italic mb-1'>MF</div>
+                  <div className='h-px w-12 bg-white/20 my-2' />
+                  <div className='text-[10px] font-bold text-white/40 uppercase tracking-widest'>Strategic <br /> Excellence</div>
+                </div>
+
+                {/* Floating Icons */}
+                <div className='absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl animate-bounce duration-3000'>
+                  <data.icon className='w-6 h-6 text-primary' />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -128,20 +172,20 @@ export default function VerticalPage({
                   featureCardBgs[idx % featureCardBgs.length],
                 )}
               >
-                <div className='absolute inset-0 bg-linear-to-br from-white/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity' />
+                <div className='absolute inset-0 bg-linear-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity' />
 
                 <div
                   className={cn(
-                    'relative w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm bg-linear-to-br border',
+                    'relative w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all shadow-xl bg-slate-900/50 border border-white/10 backdrop-blur-sm',
                     featureColors[idx % featureColors.length],
                   )}
                 >
                   <feature.icon className='w-7 h-7' />
                 </div>
-                <h3 className='relative text-lg font-bold text-slate-900 mb-2'>
+                <h3 className='relative text-lg font-bold text-white mb-2'>
                   {feature.title}
                 </h3>
-                <p className='relative text-base text-slate-800 leading-relaxed font-light'>
+                <p className='relative text-base text-white/85 leading-relaxed font-light'>
                   {feature.description}
                 </p>
               </div>

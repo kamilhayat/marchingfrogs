@@ -14,10 +14,10 @@ import {
 
 export const VERTICAL_DETAILS = {
   'patent-hub': {
-    title: 'Patent Hub',
+    title: 'Patent Drawing Hub',
     tagline: 'Precision Patent Illustrations for Global IP Professionals.',
     description:
-      'Patent Hub provides high-quality, technical patent drawings that meet the stringent requirements of USPTO, EPO, and other international patent offices. Our team combines legal understanding with technical precision to ensure your inventions are accurately represented.',
+      'Patent Drawing Hub provides high-quality, technical patent drawings that meet the stringent requirements of USPTO, EPO, and other international patent offices. Our team combines legal understanding with technical precision to ensure your inventions are accurately represented.',
     icon: FileText,
     color: 'blue',
     visionTitle: 'What We Do',

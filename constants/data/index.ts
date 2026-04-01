@@ -3,6 +3,7 @@ import {
   PenTool,
   Plane,
   Settings,
+  Search,
   SearchX,
   Gavel,
   History,
@@ -91,12 +92,20 @@ export const VERTICALS: Vertical[] = [
     link: 'https://www.bespokegls.com/',
   },
   {
-    title: 'Patent Hub',
+    title: 'Patent Drawing Hub',
     description:
       'Technical illustrations, prior art support, and research-driven documentation ensuring precision and compliance for IP professionals globally.',
     icon: PenTool,
     color: 'bg-primary/15 text-primary',
     link: '/verticals/patent-hub',
+  },
+  {
+    title: 'IP and Research Support',
+    description:
+      'Providing comprehensive technical research, prior art analysis, and strategic IP documentation to support global innovation.',
+    icon: Search,
+    color: 'bg-amber-500/15 text-amber-500',
+    link: '/#services',
   },
   {
     title: 'MICE Management',
