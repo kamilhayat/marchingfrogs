@@ -16,10 +16,15 @@ export const NAV_LINKS: NavLink[] = [
           'Flagship global events platform for legal and tech leaders.',
       },
       {
-        title: 'Patent Drawing Hub',
-        href: 'https://www.patentdrawinghub.com/',
+        title: 'Patent Hub',
+        href: '/verticals/patent-hub',
+        description: 'Specialised patent illustrations.',
+      },
+      {
+        title: 'IP and Research Support',
+        href: '/#services',
         description:
-          'Specialised patent illustrations and IP research support.',
+          'Expert research support and solutions for IP professionals.',
       },
       {
         title: 'MICE Management',

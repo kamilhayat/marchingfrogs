@@ -49,21 +49,27 @@ export default function VerticalPage({
   ];
 
   return (
-    <main className='min-h-screen pt-32 pb-20'>
+    <main className='min-h-screen'>
       {/* Hero Section */}
-      <section className='relative px-6 mb-20 overflow-hidden'>
+      <section
+        className='relative px-6 py-32  overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl shadow-primary/10'
+        style={{
+          background:
+            'linear-gradient(160deg, oklch(0.15 0.04 280) 0%, oklch(0.18 0.05 260) 50%, oklch(0.14 0.03 300) 100%)',
+        }}
+      >
         <div
           className={cn(
-            'absolute inset-0 -z-10 blur-[120px] opacity-40',
+            'absolute inset-0 -z-10 blur-[140px] opacity-25',
             activeBg,
           )}
         />
 
         <div className='max-w-6xl mx-auto'>
-          <div className='space-y-6 text-center lg:text-left'>
+          <div className='space-y-8 text-center lg:text-left'>
             <div
               className={cn(
-                'inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border text-xs font-black tracking-[0.2em] uppercase',
+                'inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 text-xs font-black tracking-[0.2em] uppercase backdrop-blur-md shadow-sm',
                 activeColor,
               )}
             >
@@ -71,7 +77,7 @@ export default function VerticalPage({
               Strategic Business Vertical
             </div>
 
-            <h1 className='text-5xl lg:text-7xl font-serif font-bold text-slate-900 leading-tight tracking-tight'>
+            <h1 className='text-5xl lg:text-7xl font-serif font-bold text-white leading-tight tracking-tight'>
               {(() => {
                 const words = data.title.split(' ');
                 const lastWord = words.pop();
@@ -92,7 +98,7 @@ export default function VerticalPage({
               })()}
             </h1>
 
-            <p className='text-xl lg:text-2xl text-slate-500 font-light max-w-3xl mx-auto lg:mx-0 leading-relaxed'>
+            <p className='text-xl lg:text-2xl text-white/60 font-light max-w-3xl mx-auto lg:mx-0 leading-relaxed shadow-sm'>
               {data.tagline}
             </p>
           </div>
@@ -105,7 +111,7 @@ export default function VerticalPage({
           {/* Main Description */}
           <div className='space-y-6'>
             <h2 className='text-3xl font-serif font-bold text-slate-900'>
-              The Vision
+              {(data as any).visionTitle || 'The Vision'}
             </h2>
             <p className='text-lg text-slate-600 leading-relaxed font-light'>
               {data.description}
@@ -135,12 +141,102 @@ export default function VerticalPage({
                 <h3 className='relative text-lg font-bold text-slate-900 mb-2'>
                   {feature.title}
                 </h3>
-                <p className='relative text-sm text-slate-500 leading-relaxed font-light'>
+                <p className='relative text-base text-slate-800 leading-relaxed font-light'>
                   {feature.description}
                 </p>
               </div>
             ))}
           </div>
+
+          {/* Pricing Section */}
+          {(data as any).pricing && (
+            <div className='space-y-8 pt-4'>
+              <h2 className='text-3xl font-serif font-bold text-slate-900'>
+                {(data as any).pricingTitle || 'Our Pricing'}
+              </h2>
+              <div className='grid sm:grid-cols-2 gap-8'>
+                {(data as any).pricing.map((item: any, idx: number) => (
+                  <div
+                    key={idx}
+                    className='p-8 rounded-4xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow flex flex-col relative overflow-hidden group'
+                  >
+                    <div className='absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform' />
+                    <div className='relative z-10'>
+                      <div className='flex flex-col gap-2 mb-6'>
+                        <h3 className='text-xl font-bold text-slate-900'>
+                          {item.title}
+                        </h3>
+                        <div className='inline-flex bg-primary/10 text-primary px-3 py-1.5 rounded-xl text-sm font-black w-fit'>
+                          {item.price}
+                        </div>
+                      </div>
+                      <div className='space-y-6 grow'>
+                        <div>
+                          <h4 className='text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2'>
+                            <div className='w-8 h-px bg-slate-200' />
+                            Product Description
+                          </h4>
+                          <ul className='space-y-3'>
+                            {item.description.map((desc: string, i: number) => (
+                              <li
+                                key={i}
+                                className='text-base text-slate-600 flex items-start gap-2.5 leading-relaxed'
+                              >
+                                <div className='w-1 h-1 rounded-full bg-primary mt-2 shrink-0' />
+                                {desc}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className='text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2'>
+                            <div className='w-8 h-px bg-slate-200' />
+                            Product Delivery
+                          </h4>
+                          <ul className='space-y-3'>
+                            {item.delivery.map((del: string, i: number) => (
+                              <li
+                                key={i}
+                                className='text-base text-slate-900 font-medium flex items-center gap-2.5 bg-slate-50/50 p-2 rounded-xl border border-slate-100'
+                              >
+                                <CheckCircle2 className='w-4 h-4 text-primary shrink-0' />
+                                {del}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* FAQ Section */}
+          {(data as any).faqs && (
+            <div className='space-y-8 pt-8'>
+              <h2 className='text-3xl font-serif font-bold text-slate-900'>
+                Frequently Asked Questions
+              </h2>
+              <div className='space-y-4'>
+                {(data as any).faqs.map((faq: any, idx: number) => (
+                  <div
+                    key={idx}
+                    className='p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary/20 transition-all group'
+                  >
+                    <h3 className='text-base font-bold text-slate-900 mb-2 flex items-center gap-3'>
+                      <span className='text-primary'>Q{idx + 1}.</span>
+                      {faq.question}
+                    </h3>
+                    <p className='text-base text-slate-800 leading-relaxed font-light pl-8'>
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Integrated Strategy */}
           <div className='p-8 lg:p-12 rounded-[2.5rem] bg-slate-900 text-white relative overflow-hidden'>

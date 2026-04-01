@@ -91,12 +91,12 @@ export const VERTICALS: Vertical[] = [
     link: 'https://www.bespokegls.com/',
   },
   {
-    title: 'Patent Drawing Hub',
+    title: 'Patent Hub',
     description:
       'Technical illustrations, prior art support, and research-driven documentation ensuring precision and compliance for IP professionals globally.',
     icon: PenTool,
     color: 'bg-primary/15 text-primary',
-    link: 'https://www.patentdrawinghub.com/',
+    link: '/verticals/patent-hub',
   },
   {
     title: 'MICE Management',
@@ -132,7 +132,7 @@ export const ABOUT_CONTENT: AboutContent = {
   },
   descriptions: [
     'Marching Frogs is a global, multi-disciplinary enterprise driven by a client-first philosophy and a commitment to delivering solutions that go beyond conventional service models. We place our clients at the centre of everything we do—working as strategic partners rather than service providers.',
-    'As a parent company, Marching Frogs oversees and operates multiple specialised verticals, including global conference platforms, patent illustration hubs, MICE management, and digital transformation studios.',
+    'As a parent company, Marching Frogs oversees and operates multiple specialised verticals, including global conference platforms, patent hubs, MICE management, and digital transformation studios.',
   ],
   features: [
     'Strategic Partnership Model',
