@@ -12,9 +12,11 @@ import { NAV_LINKS } from '@/constants';
 const DesktopDropdown = ({
   items,
   open,
+  onClose,
 }: {
   items: { title: string; href: string; description?: string }[];
   open: boolean;
+  onClose: () => void;
 }) => (
   <div
     className={cn(
@@ -38,6 +40,7 @@ const DesktopDropdown = ({
       <Link
         key={item.title}
         href={item.href}
+        onClick={onClose}
         className='group/item relative flex flex-col gap-1 p-3.5 rounded-2xl
                    overflow-hidden transition-all duration-200
                    hover:bg-white/4'
@@ -124,7 +127,7 @@ const MobileMenu = ({
         <div className='flex items-center justify-between px-5 py-5 border-b border-white/6'>
           <Link href='/' onClick={onClose} className='group flex items-center gap-2.5'>
             <Image
-              src='/logo.png'
+              src='/logo-marching-frogs.png'
               alt='Marching Frogs'
               width={140}
               height={40}
@@ -244,6 +247,11 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
+  useEffect(() => {
+    setOpenDD(null);
+    setMobileOpen(false);
+  }, [pathname]);
+
   return (
     <>
       <header
@@ -269,11 +277,11 @@ const Navbar = () => {
           >
             <Link href='/' className='group flex items-center gap-2.5 shrink-0'>
               <Image
-                src='/logo.png'
+                src='/logo-marching-frogs.png'
                 alt='Marching Frogs'
-                width={280}
+                width={240}
                 height={80}
-                className='h-12 lg:h-20 w-auto object-contain'
+                className='h-12 lg:h-16 w-auto object-contain'
                 priority
               />
             </Link>
@@ -320,6 +328,7 @@ const Navbar = () => {
                     <DesktopDropdown
                       items={link.items}
                       open={openDD === link.title}
+                      onClose={() => setOpenDD(null)}
                     />
                   )}
                 </div>

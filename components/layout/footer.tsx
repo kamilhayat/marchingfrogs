@@ -49,7 +49,7 @@ const Footer = () => {
             {/* Logo */}
             <div className='flex items-center gap-3'>
               <Image
-                src='/logo.png'
+                src='/logo-marching-frogs.png'
                 alt='Marching Frogs Logo'
                 width={160}
                 height={100}

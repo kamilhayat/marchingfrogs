@@ -16,9 +16,9 @@ export const NAV_LINKS: NavLink[] = [
           'Flagship global events platform for legal and tech leaders.',
       },
       {
-        title: 'Patent Drawing Hub',
+        title: 'Patent Illustration Hub',
         href: '/verticals/patent-hub',
-        description: 'Specialised patent illustrations.',
+        description: 'Contact for Utility and Design Patent Drawings',
       },
       {
         title: 'IP and Research Support',

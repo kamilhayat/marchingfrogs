@@ -50,7 +50,7 @@ export default function VerticalPage({
   ];
 
   return (
-    <main className='min-h-screen pt-10'>
+    <main className='min-h-screen'>
       {/* Hero Section */}
       <section
         className='relative px-6 py-20 overflow-hidden shadow-2xl shadow-primary/20'
@@ -71,7 +71,7 @@ export default function VerticalPage({
           )}
         />
 
-        <div className='max-w-7xl mx-auto relative z-10'>
+        <div className='max-w-7xl mx-auto relative z-10 mt-6'>
           <div className='grid lg:grid-cols-2 gap-16 items-center'>
             <div className='space-y-10 text-center lg:text-left'>
               {/* Badge */}
